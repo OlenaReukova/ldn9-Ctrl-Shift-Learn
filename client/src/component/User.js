@@ -20,7 +20,8 @@ export function User() {
 
 	return (
 <div className="user-container">
-	<input className="user-input" type="text" value ={name} onChange={handleInputChange} placeholder="Enter your full name" />
+	<h2>Your GitHub User Name</h2>
+	<input className="user-input" type="text" value ={name} onChange={handleInputChange}  />
 	<br />
 	<button className="user-button">Search</button>
 </div>

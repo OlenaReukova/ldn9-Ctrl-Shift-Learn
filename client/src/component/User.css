@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #d9d9d9;
   }
   
   .user-input {
@@ -12,21 +13,15 @@
     font-size: 14px;
   }
   
-  .user-input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
-  }
+  
   
   .user-button {
-    background-color: #007bff;
-    color: #fff;
     padding: 8px 16px;
-    border: none;
-    cursor: pointer;
+    border-radius: 8px;
+    border-style: none;
   }
   
-  .user-button:hover {
-    background-color: #0056b3;
+  h2 {
+    font-weight: 100;
   }
   

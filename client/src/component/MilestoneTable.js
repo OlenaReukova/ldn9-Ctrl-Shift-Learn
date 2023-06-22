@@ -2,7 +2,7 @@ export function MilestoneTable() {
 
 	return (
 			<div>
-				<h1>Here we are waiting for Milestone Table</h1>
+				<h1>hello world</h1>
 			</div>
 	);
 }
