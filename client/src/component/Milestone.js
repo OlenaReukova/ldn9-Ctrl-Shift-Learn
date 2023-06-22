@@ -1,20 +1,28 @@
 import "./Home.js";
+import React, { useEffect, useState } from "react";
 
+const ModuleInformation = () => {
+  const [module] = useState({
+    name: "Final Project",
+    deadline: new Date("2023-07-08"),
+  });
+  const [remainingDays, setRemainingDays] = useState(0);
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Create a module object
-    const module = {
-      name: "Final Project",
-      deadline: new Date("2023-07-08"),
-    };
-
-    // Calculate the remaining days to the deadline
+  useEffect(() => {
     const currentDate = new Date();
     const timeDiff = module.deadline.getTime() - currentDate.getTime();
-    const remainingDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    setRemainingDays(daysRemaining);
+  }, [module.deadline]);
 
-    // Update the HTML elements with module information
-    document.getElementById("module-name").textContent += module.name;
-    document.getElementById("deadline").textContent += module.deadline.toDateString();
-    document.getElementById("remaining-days").textContent += remainingDays + " days to deadline";
-  });
+  return (
+    <div>
+      <h2>Module Information</h2>
+      <p id="module-name">Module Name: {module.name}</p>
+      <p id="deadline">Deadline: {module.deadline.toDateString()}</p>
+      <p id="remaining-days">Remaining Days: {remainingDays} days to deadline</p>
+    </div>
+  );
+};
+
+export default ModuleInformation;

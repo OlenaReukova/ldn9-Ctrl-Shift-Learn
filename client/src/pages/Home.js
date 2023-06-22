@@ -1,8 +1,6 @@
 import "./Home.css";
 import User from "../component/User";
 import MilestoneTable from  "../component/MilestoneTable";
-
-
 export function Home() {
 
 	return (
