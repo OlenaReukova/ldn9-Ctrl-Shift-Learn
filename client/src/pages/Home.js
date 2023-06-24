@@ -7,7 +7,6 @@ export function Home() {
 	return (
 		<main className="main_container" role="main">
 			<User />
-			<MilestoneTable />
 		</main>
 	);
 }

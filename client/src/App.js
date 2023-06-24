@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 
 import Home from "./pages/Home";
+import Result from "./pages/Result" ;
 
 const App = () => {
 	const [userName ,setUserName] = useState("");
@@ -22,6 +23,7 @@ const App = () => {
 	}>
 		<Routes>
 		<Route path="/" element={<Home />} />
+		<Route path ="/result" element ={<Result />} />
 	</Routes>
 	</AppContext.Provider>
 	)
