@@ -1,7 +1,10 @@
+import "../pages/Result.css"
 import MilestoneTable from "../component/MilestoneTable"
 const Result = () => {
   return (
-    <MilestoneTable />
+   <div className="Result">
+   <MilestoneTable />
+   </div> 
   )
 }
 
