@@ -2,10 +2,9 @@ import "./User.css";
 import { useContext } from "react";
 import { AppContext } from "../App";
 
-export function Search() {
-    const { userName, setCodewarsData, setGitHubData } = useContext(AppContext);// we suposed to use context with this name//
-    //as search button clicked this function will happen
-    const searchHandle = () => {
+export const Search = () => {
+    const { userName, setCodewarsData, setGitHubData } = useContext(AppContext);
+    const handleSearch = () => {
         /////****GETTING CODEWARS DATA****///////
         fetch(`https://www.codewars.com/api/v1/users/${userName}`)
             .then((res) => {
@@ -37,9 +36,7 @@ export function Search() {
             });
     };
     return (
-        <button className="user-button" onClick={() => searchHandle()} >search</button>
+        <button className="user-button" onClick={() => handleSearch()} >search</button>
     );
 
-}
-
-export default Search;
+};
