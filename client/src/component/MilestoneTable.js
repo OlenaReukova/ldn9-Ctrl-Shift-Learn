@@ -1,5 +1,9 @@
+import { AppContext } from "../AppContext";
+import { useContext } from "react";
 import "../styles/MilestoneTable.css";
-const MilestoneTable = () => {
+
+export const MilestoneTable = () => {
+	const { githubData, codewarsData } = useContext(AppContext);
 	return (
 		<div className="table-wrapper">
 			<table>
@@ -11,13 +15,11 @@ const MilestoneTable = () => {
 				</thead>
 				<tbody>
 					<tr>
-						<td>5 out of 7</td>
-						<td>3</td>
+						<td>{githubData.total_count || ""} out of 26</td>
+						<td>{codewarsData.ranks?.overall?.name || ""} </td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	);
-}
-
-export default MilestoneTable;
+};
