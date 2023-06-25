@@ -15,7 +15,7 @@ export const MilestoneTable = () => {
 				</thead>
 				<tbody>
 					<tr>
-						<td>{githubData.total_count} out of 26</td>
+						<td>{githubData.total_count || ""} out of 26</td>
 						<td>{codewarsData.ranks?.overall?.name || ""} </td>
 					</tr>
 				</tbody>
