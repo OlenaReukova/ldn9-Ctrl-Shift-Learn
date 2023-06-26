@@ -1,25 +1,28 @@
-import React, { useState } from "react";
 import "./User.css";
+import { useContext } from "react";
 import { Search } from "../component/Search";
+import { AppContext } from "../AppContext";
+import { Link } from "react-router-dom";
 
 export const User = () => {
-  const [userName, setUserName] = useState("");
+	const { setUserName } = useContext(AppContext);
 
-  const handleInputChange = (event) => {
-    setUserName(event.target.value);
-  };
+	const handleInputChange = (event) => {
+		setUserName(event.target.value);
+	};
 
-  return (
-    <div className="user-container">
-      <label htmlFor="username">Your GitHub User Name</label>
-      <input
-        className="user-input"
-        type="text"
-        id="username"
-        value={userName}
-        onChange={handleInputChange}
-      />
-      <Search userName={userName} />
-    </div>
-  );
+	return (
+		<div className="user-container">
+			<label htmlFor="username">Your GitHub User Name</label>
+			<input
+				className="user-input"
+				type="text"
+				id="username"
+				onChange={handleInputChange}
+			/>
+			<Link to="/result">
+				<Search />
+			</Link>
+		</div>
+	);
 };
