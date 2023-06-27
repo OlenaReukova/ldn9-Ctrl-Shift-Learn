@@ -1,11 +1,14 @@
-import React, { useState } from "react";
 import "./User.css";
+import { useContext } from "react";
+import { Search } from "../component/Search";
+import { AppContext } from "../AppContext";
+import { Link } from "react-router-dom";
 
-export function User() {
-	const [name, setName] = useState("");
+export const User = () => {
+	const { setUserName } = useContext(AppContext);
 
 	const handleInputChange = (event) => {
-		setName(event.target.value);
+		setUserName(event.target.value);
 	};
 
 	return (
@@ -15,11 +18,11 @@ export function User() {
 				className="user-input"
 				type="text"
 				id="username"
-				value={name}
 				onChange={handleInputChange}
 			/>
-			<button className="user-button">Search</button>
+			<Link to="/result">
+				<Search />
+			</Link>
 		</div>
 	);
-}
-export default User;
+};

@@ -1,6 +1,6 @@
 import "./User.css";
 import { useContext } from "react";
-import { AppContext } from "../App";
+import { AppContext } from "../AppContext";
 
 export const Search = () => {
     const { userName, setCodewarsData, setGitHubData } = useContext(AppContext);
