@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ModuleInformation = () => {
+export const ModuleInformation = () => {
   const [module] = useState({
     name: "Final Project",
     deadline: new Date("2023-07-08"),
@@ -24,4 +24,3 @@ const ModuleInformation = () => {
   );
 };
 
-export default ModuleInformation;
