@@ -1,6 +1,8 @@
 import express from "express";
 
 import apiRouter from "./api";
+import cohortsRooter from "./routes/cohorts";
+
 import config from "./utils/config";
 import {
 	clientRouter,
@@ -24,6 +26,7 @@ if (config.production) {
 }
 
 app.use(apiRoot, apiRouter);
+app.use(apiRoot,cohortsRooter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
 
