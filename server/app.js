@@ -2,7 +2,7 @@ import express from "express";
 
 import apiRouter from "./api";
 import traineeRouter from "./routes/traineeRoutes";
-import CohortRouter from "./routes/cohortRoutes";
+import cohortRouter from "./routes/cohortRoutes";
 import config from "./utils/config";
 import {
 	clientRouter,
@@ -28,7 +28,7 @@ if (config.production) {
 app.use(apiRoot, apiRouter);
 //Routes//
 app.use(`${apiRoot}/trainees`,traineeRouter);
-app.use(`${apiRoot}/cohorts`,CohortRouter);
+app.use(`${apiRoot}/cohorts`,cohortRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
 
