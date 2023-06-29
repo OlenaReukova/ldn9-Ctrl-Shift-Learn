@@ -1,7 +1,5 @@
-import { Router } from "express";
-const router = Router();
 import db from "../db";
-router.get("/cohorts", async (req, res) => {
+export const getAllCohorts = async (req, res) => {
     try {
       const q = "SELECT * FROM cohorts";
       const result = await db.query(q);
@@ -11,5 +9,12 @@ router.get("/cohorts", async (req, res) => {
       console.error("Error retrieving cohorts:", error);
       res.status(500).send("Failed, Internal Server Error. Database or table not found");
     }
-  });
-  export default router;
+  };
+
+export const getCohort = (req, res) => {
+    res.status(200).json("you can write your get function to get one cohort here");
+};
+
+export const createCohort = (req, res) => {
+    res.status(200).json("you can write your post function to create new cohort here");
+};

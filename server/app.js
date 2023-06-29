@@ -1,8 +1,8 @@
 import express from "express";
 
 import apiRouter from "./api";
-import cohortsRooter from "./routes/cohorts";
-
+import traineeRouter from "./routes/traineeRoutes";
+import cohortRouter from "./routes/cohortRoutes";
 import config from "./utils/config";
 import {
 	clientRouter,
@@ -26,7 +26,9 @@ if (config.production) {
 }
 
 app.use(apiRoot, apiRouter);
-app.use(apiRoot,cohortsRooter);
+//Routes//
+app.use(`${apiRoot}/trainees`,traineeRouter);
+app.use(`${apiRoot}/cohorts`,cohortRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
 
