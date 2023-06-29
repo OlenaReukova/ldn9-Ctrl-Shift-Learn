@@ -1,7 +1,7 @@
-const express = require("express");
-const { getAllCohorts, createCohort, getCohort } = require("../controllers/cohortController");
+import { Router } from "express";
+import { getAllCohorts, createCohort, getCohort } from "../controllers/cohortController";
 
-const router = express.Router();
+const router = Router();
 
 router
   .route("/")
@@ -12,4 +12,4 @@ router
   .route("/:id")
   .get(getCohort);
 
-module.exports = router;
+export default router;

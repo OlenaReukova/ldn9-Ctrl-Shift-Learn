@@ -1,7 +1,7 @@
-const express = require("express");
-const { getAllTrainees, createTrainee, getTrainee } = require("../controllers/traineeController");
+import { Router } from "express";
+import { getAllTrainees, createTrainee, getTrainee } from "../controllers/traineeController";
 
-const router = express.Router();
+const router = Router();
 
 router
   .route("/")
@@ -12,4 +12,4 @@ router
   .route("/:id")
   .get(getTrainee);
 
-module.exports = router;
+export default router;
