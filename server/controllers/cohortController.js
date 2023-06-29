@@ -1,15 +1,15 @@
 import db from "../db";
 export const getAllCohorts = async (req, res) => {
-    try {
-      const q = "SELECT * FROM cohorts";
-      const result = await db.query(q);
-      const cohorts = result.rows;
-      res.status(200).json({ cohorts });
-    } catch (error) {
-      console.error("Error retrieving cohorts:", error);
-      res.status(500).send("Failed, Internal Server Error.");
-    }
-  };
+  try {
+    const q = "SELECT * FROM cohorts";
+    const result = await db.query(q);
+    const cohorts = result.rows;
+    res.status(200).json({ cohorts });
+  } catch (error) {
+    console.error("Error retrieving cohorts:", error);
+    res.status(500).send("Failed, Internal Server Error.");
+  }
+};
 
 export const getCohort = async (req, res) => {
   try {
@@ -28,16 +28,16 @@ export const getCohort = async (req, res) => {
     console.error("Error retrieving cohort:", error);
     res.status(500).send("Failed to retrieve cohort.");
   }
-    };
+};
 
 export const createCohort = async (req, res) => {
   try {
     const { name, start_date } = req.body; //Destructuring
     if (!name || !start_date) {
-      return res.status(400).json({ error: "Please provide both Name and start_date."  });
+      return res.status(400).json({ error: "Please provide both Name and start_date." });
     }
     const q = "INSERT INTO cohorts (name, start_date) VALUES ($1, $2)";
-     const result = await db.query(q, [name, start_date]);
+    const result = await db.query(q, [name, start_date]);
     if (result.rowCount === 1) {
       res.status(201).json({ message: "New cohort created successfully" });
     } else {
