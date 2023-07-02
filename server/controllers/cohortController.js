@@ -48,3 +48,24 @@ export const createCohort = async (req, res) => {
     return res.status(500).send("Failed to create new cohort. Please ensure all required fields are provided in the correct format.");
   }
 };
+
+export const updateCohort = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 } = req.body;
+    const q = `
+      UPDATE cohorts
+      SET name = $1, start_date = $2, m_1 = $3, m_2 = $4, m_3 = $5, m_4 = $6, m_5 = $7, m_6 = $8, m_7 = $9, m_8 = $10
+      WHERE id = $11
+    `;
+    const result = await db.query(q, [name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8, id]);
+    if (result.rowCount === 1) {
+      res.status(200).json({ message: "Cohort updated successfully" });
+    } else {
+      throw new Error("Failed to update cohort. Cohort not found.");
+    }
+  } catch (error) {
+    console.error("Error updating cohort:", error);
+    return res.status(500).send("Failed to update cohort.");
+  }
+};
