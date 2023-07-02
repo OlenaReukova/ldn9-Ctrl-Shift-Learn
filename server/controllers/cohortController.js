@@ -17,7 +17,7 @@ export const getCohort = async (req, res) => { // it should be getAllTraineesByC
     const q = "SELECT * FROM trainees WHERE cohort_id = $1";
     const result = await db.query(q, [id]);
     const trainees = result.rows;
-    if (trainees.length>0) {
+    if (trainees.length > 0) {
       console.log("Cohort found:", trainees);
       res.status(200).json({ "All Trainees of the specific cohort": trainees });
     } else {
@@ -37,9 +37,9 @@ export const createCohort = async (req, res) => {
       return res.status(400).json({ error: "Please fill out all required fields." });
     }
     const q = "INSERT INTO cohorts (name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
-    const result = await db.query(q, [name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 ]);
+    const result = await db.query(q, [name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8]);
     if (result.rowCount === 1) {
-      res.status(201).json({ "New cohort created successfully": result.rows[0] });
+      res.status(201).json({ "New cohort created successfully": req.body });
     } else {
       throw new Error("Failed to create new cohort.");
     }
