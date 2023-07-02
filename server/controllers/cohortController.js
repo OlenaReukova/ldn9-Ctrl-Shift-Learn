@@ -32,14 +32,14 @@ export const getCohort = async (req, res) => { // it should be getAllTraineesByC
 
 export const createCohort = async (req, res) => {
   try {
-    const { name, start_date } = req.body; //Destructuring
-    if (!name || !start_date) {
-      return res.status(400).json({ error: "Please provide both Name and start_date." });
+    const { name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 } = req.body;//Destructuring
+    if (!name || !start_date || !m_1 || !m_2 || !m_3 || !m_4 || !m_5 || !m_6 || !m_7 || !m_8) { //not sure product manager has to know all dates in advance
+      return res.status(400).json({ error: "Please fill out all required fields." });
     }
-    const q = "INSERT INTO cohorts (name, start_date) VALUES ($1, $2)";
-    const result = await db.query(q, [name, start_date]);
+    const q = "INSERT INTO cohorts (name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+    const result = await db.query(q, [name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 ]);
     if (result.rowCount === 1) {
-      res.status(201).json({ message: "New cohort created successfully" });
+      res.status(201).json({ "New cohort created successfully": result.rows[0] });
     } else {
       throw new Error("Failed to create new cohort.");
     }
