@@ -6,21 +6,19 @@
 }
 
 body {
-	font-family: Arial, sans-serif; 
 	text-align: center;
-  }
-  
-  h1 {
-	color: #d00606;
-  }
-  
-  #module-info {
+}
+
+h1 {
+	color: var(--cyf-color);
+}
+
+#module-info {
 	margin-top: 50px;
-  }
-  
-  h2 {
+}
+
+h2 {
 	margin: 10px 0;
-	color: rgb(10, 10, 10);
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
+	color: var(--user__containe);
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
