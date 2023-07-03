@@ -46,3 +46,15 @@ export const createTrainee = (req, res) => {
     res.status(200).json("you can write your post function to create a new trainee here");
 };
 
+export const updateTrainee = async (req, res) => {
+    const { id } = req.params;
+    const { full_name, cohort_id, gitHub_user_name } = req.body;
+    try {
+      const q = "UPDATE trainees SET full_name = $1, gitHub_user_name= $2, cohort_id = $3 WHERE id = $4";
+      await db.query(q, [full_name, cohort_id, id, gitHub_user_name]);
+      res.status(200).json({ message: "Trainee details updated successfully" });
+    } catch (error) {
+      console.error("Error updating trainee details:", error);
+      res.status(500).send("Failed, Internal Server Error");
+    }
+  };
