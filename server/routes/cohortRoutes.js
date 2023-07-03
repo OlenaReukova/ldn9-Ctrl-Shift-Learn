@@ -12,4 +12,5 @@ router
   .route("/:id")
   .get(getCohort)
   .put(updateCohort);
+
 export default router;
