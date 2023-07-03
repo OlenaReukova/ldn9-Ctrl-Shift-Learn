@@ -11,15 +11,18 @@ export const getAllCohorts = async (req, res) => {
   }
 };
 
-export const getCohort = async (req, res) => { // it should be getAllTraineesByCohort
+export const getCohort = async (req, res) => {
   try {
     const { id } = req.params;
-    const q = "SELECT * FROM trainees WHERE cohort_id = $1";
-    const result = await db.query(q, [id]);
-    const trainees = result.rows;
+    const traineesQuery = "SELECT * FROM trainees WHERE cohort_id = $1";
+    const milestonesQuery = " SELECT m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 FROM cohorts WHERE id = $1";
+    const traineesResult = await db.query(traineesQuery, [id]);
+    const milestonesResult = await db.query(milestonesQuery, [id]);
+    const trainees = traineesResult.rows;
+    const milestones = milestonesResult.rows[0];
     if (trainees.length > 0) {
       console.log("Cohort found:", trainees);
-      res.status(200).json({ "All Trainees of the specific cohort": trainees });
+      res.status(200).json({ "All Trainees": trainees, "Milestones": milestones });
     } else {
       console.error("Cohort not found.");
       res.status(404).json({ error: "Cohort not found." });
