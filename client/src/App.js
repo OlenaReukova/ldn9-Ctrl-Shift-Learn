@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { useState } from "react";
 import "./App.css";
-
+import "./styles/global.css";
 import { Home } from "./pages/Home";
 import { Result } from "./pages/Result";
 import { CohortForm } from "./component/CohortForm";

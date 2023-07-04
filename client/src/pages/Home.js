@@ -1,4 +1,3 @@
-import "./Home.css";
 import { User } from "../component/User";
 
 export const Home = () => {
