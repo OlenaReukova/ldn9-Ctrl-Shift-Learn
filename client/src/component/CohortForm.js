@@ -20,7 +20,7 @@ export const CohortForm = () => {
     const AddCohort = async (input) => {
         console.log(input);
         try {
-            const response = await fetch("http://localhost:3000/api/cohorts", {
+            const response = await fetch("/api/cohorts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

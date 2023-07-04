@@ -10,7 +10,7 @@ export const Cohorts = () => {
 		const fetchAllCohorts = async () => {
 
 			try {
-				const response = await fetch("http://localhost:3000/api/cohorts");
+				const response = await fetch("/api/cohorts");
 				const data = await response.json();
 				if (response.status === 200) {
 					setCohortsData(data.cohorts);
