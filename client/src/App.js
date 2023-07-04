@@ -3,9 +3,10 @@ import { AppContext } from "./AppContext";
 import { useState } from "react";
 import "./App.css";
 import "./styles/global.css";
-
 import { Home } from "./pages/Home";
 import { Result } from "./pages/Result";
+import { CohortForm } from "./component/CohortForm";
+import { Cohorts } from "./pages/Cohorts";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
@@ -25,6 +26,8 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/result" element={<Result />} />
+				<Route path="/admin/cohorts" element={<Cohorts />} />
+				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
 			</Routes>
 		</AppContext.Provider>
 	);
