@@ -5,11 +5,11 @@ export const getAllTrainees = (req, res) => {
 };
 
 export const getTrainee = async (req, res) => {
-	const { traineeId } = req.params;
+	const { id } = req.params;
 
 	try {
 		const q = "SELECT * FROM trainees WHERE id = $1";
-		const result = await db.query(q, [traineeId]);
+		const result = await db.query(q, [id]);
 		const trainee = result.rows[0];
 
 		if (!trainee) {
