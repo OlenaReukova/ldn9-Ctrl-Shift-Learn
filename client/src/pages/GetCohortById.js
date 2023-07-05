@@ -48,7 +48,9 @@ export const GetCohortById = () => {
 			) : (
 				<p>No one enrolled yet ...</p>
 			)}
-			<Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>Add New Trainee</Link>
+			<Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>
+				Add New Trainee
+			</Link>
 		</div>
 	);
 };

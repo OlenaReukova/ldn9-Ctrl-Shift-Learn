@@ -5,7 +5,7 @@ import "../pages/addTrainee.css";
 export const AddTrainee = () => {
 	const [fullname, setFullName] = useState("");
 	const [githubUserName, setGithubUserName] = useState("");
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -26,9 +26,7 @@ export const AddTrainee = () => {
 				throw new Error("couldn't to add trainee");
 			}
 
-			console.log("Trainee added successfully");
-            navigate("/admin/cohorts/:id/addtrainee");
-
+			navigate("/admin/cohorts/:id/addtrainee");
 		} catch (error) {
 			console.error("Error adding trainee:", error);
 		}
@@ -41,14 +39,14 @@ export const AddTrainee = () => {
 				<label htmlFor="githubUsername">Github User Name </label>
 				<input
 					type="text"
-                    placeholder="Github User Name"
+					placeholder="Github User Name"
 					value={githubUserName}
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
 				<label htmlFor="fullName">Full Name </label>
 				<input
 					type="text"
-                    placeholder="Full Name"
+					placeholder="Full Name"
 					value={fullname}
 					onChange={(e) => setFullName(e.target.value)}
 				/>
