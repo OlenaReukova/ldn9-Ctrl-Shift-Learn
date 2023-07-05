@@ -25,10 +25,14 @@ exports.up = (pgm) => {
         FOREIGN KEY (cohort_id) REFERENCES cohorts (id)
     );
   `);
+
 };
 
 exports.down = (pgm) => {
 	pgm.sql(`
     DROP TABLE public.cohorts;
+  `);
+  pgm.sql(`
+    DROP TABLE public.trainees;
   `);
 };
