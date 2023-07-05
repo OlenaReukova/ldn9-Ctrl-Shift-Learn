@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import "../pages/getCohortById.css";
 export const GetCohortById = () => {
 	const [trainees, setTrainees] = useState([]);
 	const { id } = useParams();
@@ -23,7 +23,7 @@ export const GetCohortById = () => {
 	}, [id]);
 
 	return (
-		<div>
+		<div className="getCohortById">
 			{trainees.length > 0 ? (
 				<table>
 					<thead>
@@ -48,7 +48,7 @@ export const GetCohortById = () => {
 			) : (
 				<p>No one enrolled yet ...</p>
 			)}
-			<Link to={`/admin/cohorts/${id}/addtrainee`}>Add New Trainee</Link>
+			<Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>Add New Trainee</Link>
 		</div>
 	);
 };
