@@ -5,13 +5,14 @@ import "../pages/addTrainee.css";
 export const AddTrainee = () => {
 	const [fullname, setFullName] = useState("");
 	const [githubUserName, setGithubUserName] = useState("");
+	const [cohortId, setCohortId] = useState("");
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		try {
-			const response = await fetch("/api/cohorts/{cohortId}/trainees", {
+			const response = await fetch("/api/trainees", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -19,6 +20,7 @@ export const AddTrainee = () => {
 				body: JSON.stringify({
 					full_name: fullname,
 					github_user_name: githubUserName,
+					cohort_id: cohortId,
 				}),
 			});
 
@@ -49,6 +51,13 @@ export const AddTrainee = () => {
 					placeholder="Full Name"
 					value={fullname}
 					onChange={(e) => setFullName(e.target.value)}
+				/>
+				<label htmlFor="cohortId">Cohort Id </label>
+				<input
+					type="number"
+					placeholder="cohort Id"
+					value={cohortId}
+					onChange={(e) => setCohortId(e.target.value)}
 				/>
 				<Button title={"Submit"} />
 			</form>
