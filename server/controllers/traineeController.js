@@ -50,11 +50,11 @@ export const createTrainee = (req, res) => {
 
 export const updateTrainee = async (req, res) => {
 	const { id } = req.params;
-	const { full_name, cohort_id, gitHub_user_name } = req.body;
+	const { full_name, cohort_id, github_user_name } = req.body;
 	try {
 		const q =
-			"UPDATE trainees SET full_name = $1, gitHub_user_name= $2, cohort_id = $3 WHERE id = $4";
-		await db.query(q, [full_name, cohort_id, id, gitHub_user_name]);
+			"UPDATE trainees SET github_user_name= $1, full_name = $2, cohort_id = $3 WHERE id = $4";
+		await db.query(q, [github_user_name, full_name, cohort_id, id ]);
 		res.status(200).json({ message: "Trainee details updated successfully" });
 	} catch (error) {
 		console.error("Error updating trainee details:", error);
