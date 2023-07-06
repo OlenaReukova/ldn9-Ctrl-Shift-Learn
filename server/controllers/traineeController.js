@@ -42,11 +42,25 @@ export const searchTrainee = async (req, res) => {
 	}
 };
 
-export const createTrainee = (req, res) => {
-	res
-		.status(200)
-		.json("you can write your post function to create a new trainee here");
+export const createTrainee = async (req, res) => {
+    try {
+        const { full_name, github_user_name, cohort_id } = req.body;
+        if (!github_user_name) {
+          return res.status(400).json({ error: "Please fill out all required fields." });
+        }
+        const q = "INSERT INTO trainees (github_user_name, full_name, cohort_id) VALUES ($1, $2, $3)";
+        const result = await db.query(q, [github_user_name, full_name, cohort_id]);
+        if (result.rowCount === 1) {
+          res.status(201).json({ "New trainee created successfully": req.body });
+        } else {
+          throw new Error("Failed to create new trainee.");
+        }
+      } catch (error) {
+        console.error("Error creating trainee:", error);
+        return res.status(500).send("Failed to create new trainee. Please ensure all required fields are provided in the correct format.");
+      }
 };
+
 
 export const updateTrainee = async (req, res) => {
 	const { id } = req.params;
