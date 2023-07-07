@@ -14,12 +14,12 @@ const PullRequestCard = () => {
 
   return (
     <div>
-      <h2>Pull Requests</h2>
+      <h4>Pull Requests</h2>
       <p>Your created pull requests: {createdPullRequests}</p>
       <p>Milestone: {currentMilestone}</p>
       <p>Required pull requests: {requiredPullRequests}</p>
-      <p>You are at Milestone</p>
-      <p>Next Milestone: {nextMilestone}</p>
+      <h5>You are at Milestone</h5>
+      <h4>Next Milestone: {nextMilestone}</h4>
       <p>Remaining days: {remainingDays}</p>
       <p>Required pull requests for next milestone: {nextMilestonePullRequests}</p>
       <p>You need {nextMilestonePullRequests - createdPullRequests} more pull requests in total</p>
