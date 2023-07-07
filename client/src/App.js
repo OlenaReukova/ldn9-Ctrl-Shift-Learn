@@ -10,6 +10,7 @@ import { Cohorts } from "./pages/Cohorts";
 import { GetCohortById } from "./pages/GetCohortById";
 import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
+
 const App = () => {
 	const [userName, setUserName] = useState("");
 	const [codewarsData, setCodewarsData] = useState([]);
@@ -32,7 +33,7 @@ const App = () => {
 				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
 				<Route path="/admin/cohorts/:id" element={<GetCohortById />} />
 				<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
-				<Route path="/admin/cohorts/:id/UpdateTrainee/:id" element={<UpdateTrainee />} />
+				<Route path="/admin/cohorts/:id/updatetrainee/:id" element={<UpdateTrainee />} />
 			</Routes>
 		</AppContext.Provider>
 	);

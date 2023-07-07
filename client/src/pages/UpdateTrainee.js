@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../component/Button";
 import "../pages/addTrainee.css";
+
 export const UpdateTrainee = () => {
 	const [fullname, setFullName] = useState("");
 	const [githubUserName, setGithubUserName] = useState("");
 	const [cohortId, setCohortId] = useState("");
 	const { id } = useParams();
-	console.log(id);
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
@@ -38,7 +38,7 @@ export const UpdateTrainee = () => {
 
 	return (
 		<div className="addTrainee">
-			<h2>Update Trainee's details</h2>
+			<h1>Update Trainee's details</h1>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="githubUsername">Github User Name </label>
 				<input
