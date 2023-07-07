@@ -29,8 +29,7 @@ export const AddTrainee = () => {
 			if (!response.ok) {
 				throw new Error("couldn't to add trainee");
 			}
-
-			navigate("/admin/cohorts/:id/addtrainee");
+			navigate(-1);
 		} catch (error) {
 			console.error("Error adding trainee:", error);
 		}
@@ -41,7 +40,6 @@ export const AddTrainee = () => {
 			<h1>Add Trainee to the related Cohort</h1>
 			<form onSubmit={handleSubmit}>
 				<InputeField
-					id={"github_user_name"}
 					placeholder={"Github User Name"}
 					label={"Github User Name"}
 					type={"text"}
@@ -49,7 +47,6 @@ export const AddTrainee = () => {
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
 				<InputeField
-					id={"full_name"}
 					placeholder={"Full Name "}
 					label={"Full Name "}
 					type={"text"}
@@ -58,7 +55,6 @@ export const AddTrainee = () => {
 				/>
 
 				<InputeField
-					id={"cohort_id"}
 					placeholder={"cohort Id "}
 					label={"cohort Id"}
 					type={"number"}
@@ -70,4 +66,3 @@ export const AddTrainee = () => {
 		</div>
 	);
 };
-

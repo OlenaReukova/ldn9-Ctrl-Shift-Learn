@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../component/Button";
+import { InputeField } from "../component/InputeField";
 import "../pages/addTrainee.css";
 
 export const UpdateTrainee = () => {
@@ -40,24 +41,25 @@ export const UpdateTrainee = () => {
 		<div className="addTrainee">
 			<h1>Update Trainee's details</h1>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor="githubUsername">Github User Name </label>
-				<input
-					type="text"
-					placeholder="Github User Name"
+				<InputeField
+					placeholder={"Github User Name"}
+					label={"Github User Name"}
+					type={"text"}
 					value={githubUserName}
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
-				<label htmlFor="fullName">Full Name </label>
-				<input
-					type="text"
-					placeholder="Full Name"
+				<InputeField
+					placeholder={"Full Name "}
+					label={"Full Name "}
+					type={"text"}
 					value={fullname}
 					onChange={(e) => setFullName(e.target.value)}
 				/>
-				<label htmlFor="cohortId">Cohort Id </label>
-				<input
-					type="number"
-					placeholder="cohort Id"
+
+				<InputeField
+					placeholder={"cohort Id "}
+					label={"cohort Id"}
+					type={"number"}
 					value={cohortId}
 					onChange={(e) => setCohortId(e.target.value)}
 				/>
