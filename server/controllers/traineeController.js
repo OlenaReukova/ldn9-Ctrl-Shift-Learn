@@ -42,19 +42,33 @@ export const searchTrainee = async (req, res) => {
 	}
 };
 
-export const createTrainee = (req, res) => {
-	res
-		.status(200)
-		.json("you can write your post function to create a new trainee here");
+export const createTrainee = async (req, res) => {
+    try {
+        const { full_name, github_user_name, cohort_id } = req.body;
+        if (!github_user_name) {
+          return res.status(400).json({ error: "Please fill out all required fields." });
+        }
+        const q = "INSERT INTO trainees (github_user_name, full_name, cohort_id) VALUES ($1, $2, $3)";
+        const result = await db.query(q, [github_user_name, full_name, cohort_id]);
+        if (result.rowCount === 1) {
+          res.status(201).json({ "New trainee created successfully": req.body });
+        } else {
+          throw new Error("Failed to create new trainee.");
+        }
+      } catch (error) {
+        console.error("Error creating trainee:", error);
+        return res.status(500).send("Failed to create new trainee. Please ensure all required fields are provided in the correct format.");
+      }
 };
+
 
 export const updateTrainee = async (req, res) => {
 	const { id } = req.params;
-	const { full_name, cohort_id, gitHub_user_name } = req.body;
+	const { full_name, cohort_id, github_user_name } = req.body;
 	try {
 		const q =
-			"UPDATE trainees SET full_name = $1, gitHub_user_name= $2, cohort_id = $3 WHERE id = $4";
-		await db.query(q, [full_name, cohort_id, id, gitHub_user_name]);
+			"UPDATE trainees SET github_user_name= $1, full_name = $2, cohort_id = $3 WHERE id = $4";
+		await db.query(q, [github_user_name, full_name, cohort_id, id ]);
 		res.status(200).json({ message: "Trainee details updated successfully" });
 	} catch (error) {
 		console.error("Error updating trainee details:", error);

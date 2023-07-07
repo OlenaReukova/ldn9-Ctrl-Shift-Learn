@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../pages/getCohortById.css";
+
 export const GetCohortById = () => {
 	const [trainees, setTrainees] = useState([]);
 	const { id } = useParams();
@@ -28,19 +29,28 @@ export const GetCohortById = () => {
 				<table>
 					<thead>
 						<tr>
-							<th>Full Name</th>
 							<th>Github User Name</th>
+							<th>Full Name</th>
 							<th>Pull Requestes</th>
 							<th>Codewars</th>
+							<th>Options</th>
 						</tr>
 					</thead>
 					<tbody>
 						{trainees.map((trainee) => (
 							<tr key={trainee.id}>
-								<td>{trainee.full_name}</td>
 								<td>{trainee.github_user_name}</td>
+								<td>{trainee.full_name}</td>
 								<td>25 out of 26</td>
 								<td> 5ku</td>
+								<td>
+									<span>
+									<Link className="link" to={`/admin/cohorts/${id}/updateTrainee/${trainee.id}`}>Edit</Link>
+									</span>
+									<span>
+										<Link className="link">View</Link>
+									</span>
+								</td>
 							</tr>
 						))}
 					</tbody>
