@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
-import { Button } from "./Button";
+import { Footer } from "./Footer";
 import { InputeField } from "./InputeField";
 
 export const CohortForm = () => {
@@ -75,7 +75,7 @@ export const CohortForm = () => {
             } />
             {/* <Link to="/admin/cohorts"> */}
             {/*we need  handle this link to just happend when the form is submitted */}
-            <Button title={"Submit"} />
+            <Footer title={"Submit"} />
             {/* </Link> */}
         </form>
     );
