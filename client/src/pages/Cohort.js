@@ -1,30 +1,40 @@
 import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { } from "react-router-dom";
 import { Milestones } from "../component/Milestones";
+import { Trainees } from "../component/Trainees";
 
 export const Cohort = () => {
-    const [cohortsData, setCohortsData] = useState([]);
-
+    const [milestones, setMilestone] = useState([]);
+    const [trainees, setTrainees] = useState([]);
+    const { id } = useParams();
     useEffect(() => {
-        const fetchAllCohorts = async () => {
-
+        const fetchCohortData = async () => {
             try {
-                const response = await fetch("/api/cohorts");
-                const data = await response.json();
-                if (response.status === 200) {
-                    setCohortsData(data.cohorts);
-                } else {
-                    throw new Error("Failed to fetch cohorts");
+                const res = await fetch(`/api/cohorts/${id}`);
+                if (!res.ok) {
+                    throw new Error("couldn't fetch cohort's data");
                 }
+                const data = await res.json();
+                console.log("data", data);
+                setTrainees(data["All Trainees"]);
+                setMilestone(data["Milestones"]);
             } catch (error) {
-                console.error("Error fetching cohorts:", error);
+                console.error("Error", error);
             }
         };
-        fetchAllCohorts();
-    }, []);
-    console.log(cohortsData);
+        fetchCohortData();
+    }, [id]);
+    console.log(trainees);
+    console.log(milestones);
     return (
-        <div>
-            <Milestones cohortData = {cohortsData} />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+            <h1>{milestones.name}</h1>
+            <Milestones milestones={milestones} />
+            <Trainees trainees={trainees} id={id} />
+            <Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>
+                Add New Trainee
+            </Link>
         </div>
     );
 };
