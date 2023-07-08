@@ -7,9 +7,9 @@ import { Home } from "./pages/Home";
 import { Result } from "./pages/Result";
 import { CohortForm } from "./component/CohortForm";
 import { Cohorts } from "./pages/Cohorts";
-import { GetCohortById } from "./pages/GetCohortById";
 import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
+import { Cohort } from "./pages/Cohort";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
@@ -31,7 +31,7 @@ const App = () => {
 				<Route path="/result" element={<Result />} />
 				<Route path="/admin/cohorts" element={<Cohorts />} />
 				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
-				<Route path="/admin/cohorts/:id" element={<GetCohortById />} />
+				<Route path="/admin/cohorts/:id" element={<Cohort />} />
 				<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
 				<Route path="/admin/cohorts/:id/updatetrainee/:id" element={<UpdateTrainee />} />
 			</Routes>

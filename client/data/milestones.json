@@ -1,0 +1,38 @@
+{
+    "start": {
+        "pulls": 0,
+        "codewars": 9
+    },
+    "HTML-CSS": {
+        "pulls": 2,
+    "codewars": 9
+    },
+    "JS1-Week2": {
+        "pulls": 5,
+    "codewars": 8
+    },
+    "JS2-Week1": {
+        "pulls": 10,
+    "codewars": 7
+    },
+    "JS3-Week3": {
+        "pulls": 11,
+    "codewars": 6
+    },
+    "React-Week2": {
+        "pulls": 14,
+    "codewars": 6
+    },
+    "Node-Week2": {
+        "pulls": 14,
+    "codewars": 6
+    },
+    "DB-Week3": {
+        "pulls": 19,
+    "codewars": 5
+    },
+    "FP-Week2": {
+        "pulls": 20,
+    "codewars": 5
+    }
+}

@@ -15,7 +15,7 @@ export const getCohort = async (req, res) => {
   try {
     const { id } = req.params;
     const traineesQuery = "SELECT * FROM trainees WHERE cohort_id = $1 ORDER BY trainees Asc";
-        const milestonesQuery = " SELECT m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 FROM cohorts WHERE id = $1";
+        const milestonesQuery = " SELECT * FROM cohorts WHERE id = $1";
     const traineesResult = await db.query(traineesQuery, [id]);
     const milestonesResult = await db.query(milestonesQuery, [id]);
     const trainees = traineesResult.rows;
