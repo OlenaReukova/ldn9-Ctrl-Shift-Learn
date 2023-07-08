@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import "./styles/global.css";
 import { Home } from "./pages/Home";
-import { Result } from "./pages/Result";
+import { Dashboard } from "./pages/Dashboard";
 import { CohortForm } from "./component/CohortForm";
 import { Cohorts } from "./pages/Cohorts";
 import { AddTrainee } from "./pages/AddTrainee";
@@ -28,7 +28,7 @@ const App = () => {
 		>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/result" element={<Result />} />
+				<Route path="/result" element={<Dashboard />} />
 				<Route path="/admin/cohorts" element={<Cohorts />} />
 				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
 				<Route path="/admin/cohorts/:id" element={<Cohort />} />
