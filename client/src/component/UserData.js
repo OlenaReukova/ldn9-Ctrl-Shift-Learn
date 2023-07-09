@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../AppContext";
 
-export const Milestone = () => {
+export const UserData = () => {
 	const { userName } = useContext(AppContext);
 	const [currentMilestone, setCurrentMilestone] = useState(null);
 	const [cohortData, setCohortData] = useState({});
