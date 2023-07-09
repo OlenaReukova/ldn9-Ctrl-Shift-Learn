@@ -6,7 +6,6 @@ export const Milestone = () => {
 	const [currentMilestone, setCurrentMilestone] = useState(null);
 	const [cohortData, setCohortData] = useState({});
 
-
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -33,7 +32,7 @@ export const Milestone = () => {
 		const getMilestone = () => {
 			const currentDate = new Date().getTime();
 
-			Object.entries(cohortData).forEach(([key, value]) => {
+			Object.entries(newObject).forEach(([key, value]) => {
 				let newValue = new Date(value).getTime();
 
 				let difference = currentDate - newValue;
@@ -49,7 +48,5 @@ export const Milestone = () => {
 		};
 
 		getMilestone();
-	}, [cohortData, currentMilestone]);
-
-	// Rest of the component code...
+	}, [newObject, currentMilestone]);
 };
