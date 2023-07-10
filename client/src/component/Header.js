@@ -1,8 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import "./header.css";
 export const Header = () => {
 	const location = useLocation();
+	const AdminPages = location.pathname.startsWith("/admin");
+	const home = location.pathname === "/";
+	const about = location.pathname === "/about";
 	const isCohortsPage =
 		location.pathname === "/admin/cohorts" ||
 		location.pathname === "/admin/cohorts/";
@@ -19,26 +22,47 @@ export const Header = () => {
 				src="https://syllabus.codeyourfuture.io/img/logo.png"
 				alt="CYF"
 			/>
-			<ul>
-				<li>
-					<Link to="/">Home</Link>
-				</li>
-				{!isCohortsPage && (
+
+			<ul className="navbar">
+				{!home && (
 					<li>
-						<Link to="/admin/cohorts">Cohorts </Link>
+						<Link className="link" to="/">
+							Home
+						</Link>
 					</li>
 				)}
-				{isCohortsPage && (
+				{AdminPages && (
+					<>
+						{!isCohortsPage && (
+							<li>
+								<Link className="link" to="/admin/cohorts">
+									Cohorts{" "}
+								</Link>
+							</li>
+						)}
+						{isCohortsPage && (
+							<li>
+								<Link className="link" to="/admin/cohorts/addcohort">
+									Add New Cohort
+								</Link>
+							</li>
+						)}
+						{!isCohortsPage && isCohortDetailsPage && (
+							<li>
+								<Link className="link" to="/admin/cohorts/:id/addtrainee">
+									Add New Trainee
+								</Link>
+							</li>
+						)}
+					</>
+				)}
+				{!about && (
 					<li>
-						<Link to="/admin/cohorts/addcohort">Add New Cohort</Link>
+						<Link className="link" to="/about">
+							About
+						</Link>
 					</li>
 				)}
-				{!isCohortsPage && isCohortDetailsPage && (
-					<li>
-						<Link to="/admin/cohorts/:id/addtrainee">Add New Trainee</Link>
-					</li>
-				)}
-				<li>About</li>
 			</ul>
 		</header>
 	);
