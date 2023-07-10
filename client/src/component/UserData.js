@@ -11,9 +11,6 @@ export const UserData = () => {
 		codewars: 9,
 	});
 
-
-	console.log(milestoneDetails);
-
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -32,30 +29,27 @@ export const UserData = () => {
 	}, [userName]);
 
 	const { start, html_css, js1_week2, js2_week1, js3_week3, react_week2, node_week2, db_week3, fp_week2 } = cohortData;
-	const milestoneDeadlines = { start, html_css, js1_week2, js2_week1, js3_week3, react_week2, node_week2, db_week3, fp_week2 };
+	const cohortMilestoneDeadlines = { start, html_css, js1_week2, js2_week1, js3_week3, react_week2, node_week2, db_week3, fp_week2 };
 
 
 	useEffect(() => {
 		const getMilestone = () => {
 			const currentDate = new Date().getTime();
 
-			Object.entries(milestoneDeadlines).forEach(([key, value]) => {
-				let convertDate = new Date(value).getTime();
-				let timeDiff = currentDate - convertDate;
+			Object.entries(cohortMilestoneDeadlines).forEach(([key, value]) => {
+				let TimestampForValue = new Date(value).getTime();
 
-				if (timeDiff <= 0) {
-					console.log("currentMilestone",currentMilestoneName);
+				if (currentDate <= TimestampForValue) {
 					setCurrentMilestoneData(milestoneDetails[currentMilestoneName]);
-					console.log("detailssss", currentMilestoneData);
 					return currentMilestoneName;
 				}
 
-				if (timeDiff > 0) {
+				if (currentDate > TimestampForValue) {
 					setCurrentMilestoneName(key);
 				}
 			});
 		};
 
 		getMilestone();
-	}, [milestoneDeadlines,currentMilestoneName, currentMilestoneData]);
+	}, [cohortMilestoneDeadlines,currentMilestoneName, currentMilestoneData]);
 };
