@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./header.css";
+
 export const Header = () => {
 	const location = useLocation();
-	const AdminPages = location.pathname.startsWith("/admin");
+	const adminPages = location.pathname.startsWith("/admin");
 	const home = location.pathname === "/";
 	const about = location.pathname === "/about";
 	const isCohortsPage =
@@ -31,12 +32,11 @@ export const Header = () => {
 						</Link>
 					</li>
 				)}
-				{AdminPages && (
+				{adminPages && (
 					<>
 						{!isCohortsPage && (
 							<li>
 								<Link className="link" to="/admin/cohorts">
-									Cohorts{" "}
 								</Link>
 							</li>
 						)}
