@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext,useMemo } from "react";
+import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../AppContext";
 import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
@@ -10,7 +10,6 @@ export const Dashboard = () => {
   const [cohortData, setCohortData] = useState({});
   const [currentMilestoneName, setCurrentMilestoneName] = useState("");
   const [nextMilestoneName, setNextMilestoneName] = useState("");
-
 
   useEffect(() => {
     const fetchCohortData = async () => {
@@ -32,8 +31,6 @@ export const Dashboard = () => {
   const cohortMilestoneDeadlines = useMemo(() => (
     { start, html_css, js1_week2, js2_week1, js3_week3, react_week2, node_week2, db_week3, fp_week2 }), [start, html_css, js1_week2, js2_week1, js3_week3, react_week2, node_week2, db_week3, fp_week2]);
 
-
-
   useEffect(() => {
     let indexOfNextMilestone = 0;
     const cohortMilestoneDeadlinesArray = Object.entries(cohortMilestoneDeadlines);
@@ -49,12 +46,11 @@ export const Dashboard = () => {
 
       setCurrentMilestoneName(currentMilestoneName);
       setNextMilestoneName(nextMilestoneName);
-
     } else {
       console.log("loading...");
     }
   }, [cohortMilestoneDeadlines]);
-  console.lo;
+
   if (currentMilestoneName && nextMilestoneName) {
     return (
       <div className="dashboard">
