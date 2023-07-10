@@ -1,0 +1,111 @@
+  .footer-section {
+    padding: 23px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    display: block;
+    font-size: 1.2em;
+    box-shadow: var(--black);
+    z-index: 800;
+  }
+
+  .Footer {
+    background: var(--cyf-color);
+    color: var(--white);
+    height: auto;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5em;
+    position: relative;
+    text-transform: none;
+    margin: 0 auto;
+    padding: 8px;
+    border: 0;
+    border-radius: 2px;
+    width: auto;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0;
+    white-space: nowrap;
+    transition: padding 0.25s;
+    -webkit-transition: padding 0.25s;
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  .github,
+  .email {
+    color: var(--gray);
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4px;
+    position: relative;
+    top: 5px;
+  }
+
+  .fb :hover,
+  .tw :hover,
+  .link :hover,
+  .instag :hover,
+  .github :hover,
+  .email :hover {
+    color: var(--cyf-color);
+  }
+
+  .email-required {
+    background: var(--white);
+    height: auto;
+    font-size: 1em;
+    line-height: 1.5em;
+    position: relative;
+    text-transform: none;
+    margin: 0 auto;
+    padding: 5px;
+    border: 0;
+    border-radius: 2px;
+    width: 300px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0;
+    white-space: nowrap;
+    transition: padding 0.25s;
+    -webkit-transition: padding 0.25s;
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  .newsletter {
+    margin: 10px;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  div>footer>div>div>p>a:nth-child(1),
+  a:link {
+    color: var(--cyf-color);
+    text-decoration: underline;
+    text-decoration-color: var(--black);
+  }
+
+  div>footer>div>div>p>a:nth-child(2),
+  a:link {
+    color: var(--cyf-color);
+    text-decoration: underline;
+    text-decoration-color: var(--black);
+  }
+
+  div>footer>div>div>p>a:nth-child(3),
+  a:link {
+    color: var(--cyf-color);
+    text-decoration: underline;
+    text-decoration-color: var();
+    cursor: pointer;
+  }
