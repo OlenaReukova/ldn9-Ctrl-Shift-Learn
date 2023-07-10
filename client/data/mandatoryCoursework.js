@@ -3,6 +3,8 @@ export const mandatoryCourswork = [
 	"HTML-CSS-Coursework-Week1",
 	"HTML-CSS-Coursework-Week3",
 	"HTML-CSS-Coursework-Week4",
+	"HTML-CSS-Module-Project",
+	"HTML-CSS-Challenges",
 	"JavaScript-Core-1-Coursework-Week1",
 	"JavaScript-Core-1-Coursework-Week2",
 	"JavaScript-Core-1-Coursework-Week3",
@@ -12,6 +14,7 @@ export const mandatoryCourswork = [
 	"JavaScript-Core-2-Coursework-Week3",
 	"JavaScript-Core-2-Coursework-Week4",
 	"JavaScript-Core-3-Coursework-Week4",
+	"Module-JS3",
 	"cyf-hotel-react",
 	"Node-Coursework-Week1",
 	"Node-Coursework-Week2",
@@ -20,5 +23,6 @@ export const mandatoryCourswork = [
 	"SQL-Coursework-Week1",
 	"SQL-Coursework-Week2",
 	"SQL-Coursework-Week3",
+	"Module-Databases",
 	"Full-Stack-Project-Assessment",
 ];
