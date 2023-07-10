@@ -7,4 +7,6 @@ export const AppContext = createContext({
 	setCodewarsData: () => {},
 	githubData: [],
 	setGitHubData: () => {},
+	filteredPulls: [],
+	setFilteredPulls: () => {},
 });
