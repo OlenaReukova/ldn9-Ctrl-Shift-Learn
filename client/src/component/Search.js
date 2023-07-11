@@ -1,10 +1,9 @@
 import "./User.css";
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
-import { fetchData } from "../filterMandatory";
+
 export const Search = () => {
-	const { userName, setFilteredPulls, setCodewarsData, setGitHubData } =
-		useContext(AppContext);
+	const { userName, setCodewarsData, setGitHubData } = useContext(AppContext);
 
 	const handleSearch = () => {
 		/////****GETTING CODEWARS DATA****///////
@@ -36,15 +35,6 @@ export const Search = () => {
 			})
 			.catch((err) => {
 				console.error(err);
-			});
-		//I didnot touch githubData as we defined in context. I add filtered pulls here.
-		fetchData(githubUrl)
-			.then((filteredPulls) => {
-				console.log("filteredPulls", filteredPulls);
-				setFilteredPulls(filteredPulls);
-			})
-			.catch((err) => {
-				console.log("Something went wrong", err);
 			});
 	};
 	return (

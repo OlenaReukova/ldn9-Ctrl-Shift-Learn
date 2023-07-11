@@ -15,7 +15,6 @@ const App = () => {
 	const [userName, setUserName] = useState("");
 	const [codewarsData, setCodewarsData] = useState([]);
 	const [githubData, setGitHubData] = useState([]);
-	const [filteredPulls, setFilteredPulls] = useState([]);
 
 	return (
 		<AppContext.Provider
@@ -26,8 +25,6 @@ const App = () => {
 				setCodewarsData,
 				githubData,
 				setGitHubData,
-				filteredPulls,
-				setFilteredPulls,
 			}}
 		>
 			<Routes>

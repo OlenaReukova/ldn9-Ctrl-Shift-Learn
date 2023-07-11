@@ -3,36 +3,36 @@
         "pulls": 0,
         "codewars": 9
     },
-    "HTML-CSS": {
+    "html_css": {
         "pulls": 2,
-    "codewars": 9
+        "codewars": 9
     },
-    "JS1-Week2": {
+    "js1_week2": {
         "pulls": 5,
-    "codewars": 8
+    "   codewars": 8
     },
-    "JS2-Week1": {
+    "js2_week1": {
         "pulls": 10,
-    "codewars": 7
+        "codewars": 7
     },
-    "JS3-Week3": {
+    "js3_week3": {
         "pulls": 11,
-    "codewars": 6
+        "codewars": 6
     },
-    "React-Week2": {
+    "react_week2": {
         "pulls": 14,
-    "codewars": 6
+        "codewars": 6
     },
-    "Node-Week2": {
+    "node_week2": {
         "pulls": 14,
-    "codewars": 6
+        "codewars": 6
     },
-    "DB-Week3": {
+    "db_week3": {
         "pulls": 19,
-    "codewars": 5
+        "codewars": 5
     },
-    "FP-Week2": {
+    "fp_week2": {
         "pulls": 20,
-    "codewars": 5
+        "codewars": 5
     }
 }
