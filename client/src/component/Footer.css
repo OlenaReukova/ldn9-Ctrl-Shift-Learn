@@ -82,28 +82,19 @@
     margin: 10px;
   }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-
-  div>footer>div>div>p>a:nth-child(1),
-  a:link {
+  .footer-bottom footer div div p a:nth-child(1) {
     color: var(--cyf-color);
     text-decoration: underline;
     text-decoration-color: var(--black);
   }
 
-  div>footer>div>div>p>a:nth-child(2),
-  a:link {
+  .footer-bottom footer div div p a:nth-child(2) {
     color: var(--cyf-color);
     text-decoration: underline;
     text-decoration-color: var(--black);
   }
 
-  div>footer>div>div>p>a:nth-child(3),
-  a:link {
+  .footer-bottom footer div div p a:nth-child(3) {
     color: var(--cyf-color);
     text-decoration: underline;
     text-decoration-color: var();
