@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Label } from "recharts";
 
-const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-];
-
-export const CircleChart = () => {
+export const CircleChart = ({ data }) => {
   const totalValue = data.reduce((sum, entry) => sum + entry.value, 0);
   const percentage = (data[0].value / totalValue) * 100;
   const [isLabelVisible, setLabelVisible] = useState(false);
