@@ -4,12 +4,22 @@ import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
 import { PullRequestCard } from "../component/PullRequestCard";
 import milestoneDetails from "./../../data/milestones.json";
+import { mandatoryCourswork } from "../../data/mandatoryCoursWork";
 
 export const Dashboard = () => {
-  const { userName } = useContext(AppContext);
+  const { userName, githubData } = useContext(AppContext);
   const [cohortData, setCohortData] = useState({});
   const [currentMilestoneName, setCurrentMilestoneName] = useState("");
   const [nextMilestoneName, setNextMilestoneName] = useState("");
+
+  console.log(githubData);
+  console.log(mandatoryCourswork);
+  const filteredPulls = githubData.items?.filter((pull) => {
+    const repoName = pull.url.replace("https://api.github.com/repos/CodeYourFuture/", "").split("/")[0].toLowerCase();
+    return mandatoryCourswork.map((item) => item.toLowerCase()).includes(repoName);
+  });
+
+  console.log(filteredPulls);
 
   useEffect(() => {
     const fetchCohortData = async () => {
@@ -54,15 +64,14 @@ export const Dashboard = () => {
   if (currentMilestoneName && nextMilestoneName) {
     return (
       <div className="dashboard">
-        <p>{currentMilestoneName}</p>
         <DashboardHero
         />
         <PullRequestCard data={{
-            pulls: milestoneDetails[nextMilestoneName].pulls,
-            codewars: milestoneDetails[nextMilestoneName].codewars,
-            name: nextMilestoneName,
-            deadline: cohortMilestoneDeadlines[nextMilestoneName],
-          }} />
+          pulls: milestoneDetails[nextMilestoneName].pulls,
+          codewars: milestoneDetails[nextMilestoneName].codewars,
+          name: nextMilestoneName,
+          deadline: cohortMilestoneDeadlines[nextMilestoneName],
+        }} />
         <CodeWarsCard />
       </div>
     );
