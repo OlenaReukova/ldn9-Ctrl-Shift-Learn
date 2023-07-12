@@ -4,6 +4,7 @@ import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
 import { PullRequestCard } from "../component/PullRequestCard";
 import milestoneDetails from "./../../data/milestones.json";
+import { CircleChart } from "../component/CircleChart";
 
 export const Dashboard = () => {
 	const { userName } = useContext(AppContext);
@@ -100,6 +101,7 @@ export const Dashboard = () => {
 						deadline: cohortMilestoneDeadlines[nextMilestoneName],
 					}}
 				/>
+        <CircleChart />
 				<CodeWarsCard />
 			</div>
 		);
