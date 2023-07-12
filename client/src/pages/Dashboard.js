@@ -36,7 +36,7 @@ export const Dashboard = () => {
 			.map((item) => item.toLowerCase())
 			.includes(repoName);
 	});
-
+	console.log(codewarsData);
 	const {
 		start,
 		html_css,
@@ -108,6 +108,8 @@ export const Dashboard = () => {
 			naxtDeadline: localDate,
 			achievedPulls: filteredPulls?.length,
 			achievedRank: codewarsData.ranks?.overall?.name,
+			achievedScore: codewarsData.ranks?.languages
+				?.javascript.score,
 		};
 	};
 
