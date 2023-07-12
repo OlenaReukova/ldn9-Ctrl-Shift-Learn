@@ -4,10 +4,9 @@ import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
 import { PullRequestCard } from "../component/PullRequestCard";
 import milestoneDetails from "./../../data/milestones.json";
-import { CircleChart } from "../component/CircleChart";
-
+import { mandatoryCourswork } from "../../data/mandatoryCoursework";
 export const Dashboard = () => {
-	const { userName } = useContext(AppContext);
+	const { userName, githubData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
 	const [currentMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
@@ -27,6 +26,19 @@ export const Dashboard = () => {
 		};
 		fetchCohortData();
 	}, [userName]);
+
+	console.log("githubData", githubData);
+	const filteredPulls = githubData.items?.filter((pull) => {
+		const repoName = pull.url
+			.replace("https://api.github.com/repos/CodeYourFuture/", "")
+			.split("/")[0]
+			.toLowerCase();
+		return mandatoryCourswork
+			.map((item) => item.toLowerCase())
+			.includes(repoName);
+	});
+	console.log("filteredPulls", filteredPulls);
+	console.log(filteredPulls?.length);
 
 	const {
 		start,
@@ -101,7 +113,6 @@ export const Dashboard = () => {
 						deadline: cohortMilestoneDeadlines[nextMilestoneName],
 					}}
 				/>
-        <CircleChart />
 				<CodeWarsCard />
 			</div>
 		);

@@ -15,6 +15,7 @@ const App = () => {
 	const [userName, setUserName] = useState("");
 	const [codewarsData, setCodewarsData] = useState([]);
 	const [githubData, setGitHubData] = useState([]);
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -33,7 +34,10 @@ const App = () => {
 				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
 				<Route path="/admin/cohorts/:id" element={<Cohort />} />
 				<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
-				<Route path="/admin/cohorts/:id/updatetrainee/:id" element={<UpdateTrainee />} />
+				<Route
+					path="/admin/cohorts/:id/updatetrainee/:id"
+					element={<UpdateTrainee />}
+				/>
 			</Routes>
 		</AppContext.Provider>
 	);
