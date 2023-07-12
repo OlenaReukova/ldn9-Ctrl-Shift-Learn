@@ -1,14 +1,14 @@
 import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../AppContext";
 import { DashboardHero } from "../component/DashboardHero";
-import { CodeWarsCard } from "../component/CodeWarsCard";
-import { PullRequestCard } from "../component/PullRequestCard";
+import { MilestoneCard } from "../component/MilestoneCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
+
 export const Dashboard = () => {
-	const { userName, githubData } = useContext(AppContext);
+	const { userName, githubData, codewarsData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
-	const [currentMilestoneName, setCurrentMilestoneName] = useState("");
+	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
 
 	useEffect(() => {
@@ -27,7 +27,6 @@ export const Dashboard = () => {
 		fetchCohortData();
 	}, [userName]);
 
-	console.log("githubData", githubData);
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -37,8 +36,6 @@ export const Dashboard = () => {
 			.map((item) => item.toLowerCase())
 			.includes(repoName);
 	});
-	console.log("filteredPulls", filteredPulls);
-	console.log(filteredPulls?.length);
 
 	const {
 		start,
@@ -89,32 +86,43 @@ export const Dashboard = () => {
 				return currentDate <= timestampForValue;
 			}
 		);
+
 		if (indexOfNextMilestone !== -1) {
-			const [currentMilestoneName] =
+			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
 			const [nextMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone];
-			setCurrentMilestoneName(currentMilestoneName);
+			setCurrentMilestoneName(previousMilestoneName);
 			setNextMilestoneName(nextMilestoneName);
 		} else {
 			console.log("loading...");
 		}
 	}, [cohortMilestoneDeadlines]);
 
-	if (currentMilestoneName && nextMilestoneName) {
-		return (
-			<div className="dashboard">
-				<DashboardHero />
-				<PullRequestCard
-					data={{
-						pulls: milestoneDetails[nextMilestoneName].pulls,
-						codewars: milestoneDetails[nextMilestoneName].codewars,
-						name: nextMilestoneName,
-						deadline: cohortMilestoneDeadlines[nextMilestoneName],
-					}}
-				/>
-				<CodeWarsCard />
-			</div>
-		);
-	}
+	const getData = (value) => {
+		let localDate = new Date(cohortMilestoneDeadlines[value]).toLocaleDateString();
+		return {
+			targetPulls: milestoneDetails[value].pulls,
+			targetRank: milestoneDetails[value].codewars,
+			name: value,
+			naxtDeadline: localDate,
+			achievedPulls: filteredPulls?.length,
+			achievedRank: codewarsData.ranks?.overall?.name,
+		};
+	};
+
+	return (
+		<div className="dashboard">
+			<DashboardHero data={{
+				achievedPulls: filteredPulls?.length,
+				achievedRank: codewarsData.ranks?.overall?.name,
+			}} />
+			{previousMilestoneName && <MilestoneCard
+				data={getData(previousMilestoneName)} time={"Previous"} timeVerb={"was"}
+			/>}
+			{nextMilestoneName && <MilestoneCard
+				data={getData(nextMilestoneName)} time={"Next"} timeVerb={"is"} />}
+		</div>
+	);
+
 };
