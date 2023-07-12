@@ -20,13 +20,14 @@ export const getCohort = async (req, res) => {
     const milestonesResult = await db.query(milestonesQuery, [id]);
     const trainees = traineesResult.rows;
     const milestones = milestonesResult.rows[0];
-    if (trainees.length > 0) {
-      console.log("Cohort found:", trainees);
+    if (milestones) {
+      console.log(`Cohort found: Milestone name is ${milestones.name}`);
       res.status(200).json({ "All Trainees": trainees, "Milestones": milestones });
     } else {
       console.error("Cohort not found.");
       res.status(404).json({ error: "Cohort not found." });
     }
+
   } catch (error) {
     console.error("Error retrieving cohort:", error);
     res.status(500).send("Failed to retrieve cohort.");
