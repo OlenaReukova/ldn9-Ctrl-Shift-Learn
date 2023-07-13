@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, Cell, Label } from "recharts";
+import { PieChart, Pie, Cell, Label, ResponsiveContainer } from "recharts";
 
 export const CircleChart = ({ targetScore, achievedscore }) => {
   const gettingNeddedScore = (targetScore, achievedscore) => {
@@ -28,35 +28,37 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
 
   return (
     <div>
-      <PieChart width={730} height={250}>
-        <Pie
-          data={data}
-          cx="50%"
-          cy="50%"
-          dataKey="value"
-          innerRadius={60}
-          outerRadius={80}
-        >
-          {data.map((entry, index) => {
-            if (index === 1) {
-              return <Cell key={`cell-${index}`} fill="red" />;
-            }
-            return <Cell key={`cell-${index}`} fill="green" />;
-          })}
-          <Label
-            value={`${percentage.toFixed(0)}%`}
-            position="center"
-            fill="black"
-            style={{
-              fontSize: "32px",
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-              opacity: isLabelVisible ? 1 : 0,
-              transition: "opacity 1s ease-in-out",
-            }}
-          />
-        </Pie>
-      </PieChart>
+      <ResponsiveContainer width="95%" height={130}>
+        <PieChart >
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            dataKey="value"
+            innerRadius={"70%"}
+            outerRadius={"100%"}
+          >
+            {data.map((entry, index) => {
+              if (index === 1) {
+                return <Cell key={`cell-${index}`} fill="red" />;
+              }
+              return <Cell key={`cell-${index}`} fill="green" />;
+            })}
+            <Label
+              value={`${percentage.toFixed(0)}%`}
+              position="center"
+              fill="black"
+              style={{
+                fontSize: "32px",
+                fontWeight: "bold",
+                fontFamily: "Roboto",
+                opacity: isLabelVisible ? 1 : 0,
+                transition: "opacity 1s ease-in-out",
+              }}
+            />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 };
