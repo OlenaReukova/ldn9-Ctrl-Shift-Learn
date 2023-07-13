@@ -1,12 +1,12 @@
 import "./User.css";
-import { useContext,useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
 
 export const Search = () => {
 	const { userName, setCodewarsData, setGitHubData } = useContext(AppContext);
-    const navigate = useNavigate();
-    const [error, setError] = useState(false);
+	const navigate = useNavigate();
+	const [error, setError] = useState(false);
 
 	const handleSearch = () => {
 		/////****GETTING CODEWARS DATA****///////
@@ -18,17 +18,13 @@ export const Search = () => {
 				return res.json();
 			})
 			.then((data) => {
-                navigate("/result");
+				navigate("/result");
 				return setCodewarsData(data);
-
 			})
 			.catch((err) => {
 				console.error(err);
-                setError(true);
-                });
-                setTimeout(() => {
-                    setError(false);
-                  }, 3000);
+				setError(true);
+			});
 
 		///////GETING GITHUB PULL REQUEST ON CYF REPOSITORI
 		fetch(
@@ -45,18 +41,17 @@ export const Search = () => {
 			})
 			.catch((err) => {
 				console.error(err);
-                setError(true);
+				setError(true);
 			});
-
 	};
 	return (
-            <div>
-                <div>
-                    <button className="user-button" onClick={handleSearch}>
-                      Go for It
-                    </button>
-                </div>
-                        <div>{error && <p>User does not exist in the CYF.</p>}</div>
-            </div>
-      );
+		<div>
+			<div>
+				<button className="user-button" onClick={handleSearch}>
+				<span>let's go!</span><span>🚀</span>
+				</button>
+			</div>
+			<div>{error && <p>User does not exist in the CYF.</p>}</div>
+		</div>
+	);
 };
