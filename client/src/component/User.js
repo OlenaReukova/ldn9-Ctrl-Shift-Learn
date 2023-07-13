@@ -12,18 +12,22 @@ export const User = () => {
 
 	return (
 		<div className="user-container">
-			<h1>Want to check your progress? Amazing! </h1>
+			<h1 className="home-heading">Want to check your progress? Amazing! </h1>
 
-			<div className="user-form">
-				<label htmlFor="username" className="form-label">Enter Your GitHub User Name</label>
-				<input
-					className="form-input"
-					type="text"
-					id="username"
-					onChange={handleInputChange}
-				/>
+				<div className="user-details">
+					<label htmlFor="username" >
+						Enter Your GitHub User Name
+						</label>
+					<input
+						className="form-input"
+						type="text"
+						id="username"
+						onChange={handleInputChange}
+					/>
+				</div>
+			<div className="search-button">
+				<Search />
 			</div>
-			<Search />
 		</div>
 	);
 };

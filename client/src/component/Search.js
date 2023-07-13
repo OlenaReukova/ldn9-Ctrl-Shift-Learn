@@ -46,12 +46,10 @@ export const Search = () => {
 	};
 	return (
 		<div>
-			<div>
 				<button className="user-button" onClick={handleSearch}>
-					<span>let's go!</span>
+					<span className="user-button-span">let's go!</span>
 					<span>🚀</span>
 				</button>
-			</div>
 			<div style={{ marginTop: "10px", color: "red", fontWeight: "bold" }}>
 				{error && <p>You should be a member of CYF.</p>}
 			</div>
