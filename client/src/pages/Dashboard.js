@@ -4,13 +4,11 @@ import { DashboardHero } from "../component/DashboardHero";
 import { MilestoneCard } from "../component/MilestoneCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
-
 export const Dashboard = () => {
 	const { userName, githubData, codewarsData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
-
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -26,7 +24,6 @@ export const Dashboard = () => {
 		};
 		fetchCohortData();
 	}, [userName]);
-
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -48,7 +45,6 @@ export const Dashboard = () => {
 		db_week3,
 		fp_week2,
 	} = cohortData;
-
 	const cohortMilestoneDeadlines = useMemo(
 		() => ({
 			start,
@@ -73,7 +69,6 @@ export const Dashboard = () => {
 			fp_week2,
 		]
 	);
-
 	useEffect(() => {
 		let indexOfNextMilestone = 0;
 		const cohortMilestoneDeadlinesArray = Object.entries(
@@ -86,7 +81,6 @@ export const Dashboard = () => {
 				return currentDate <= timestampForValue;
 			}
 		);
-
 		if (indexOfNextMilestone !== -1) {
 			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
@@ -98,7 +92,6 @@ export const Dashboard = () => {
 			console.log("loading...");
 		}
 	}, [cohortMilestoneDeadlines]);
-
 	const getData = (value) => {
 		let localDate = new Date(cohortMilestoneDeadlines[value]).toLocaleDateString();
 		return {
@@ -112,7 +105,6 @@ export const Dashboard = () => {
 				?.javascript.score,
 		};
 	};
-
 	return (
 		<div className="dashboard">
 			<DashboardHero data={{
@@ -126,5 +118,4 @@ export const Dashboard = () => {
 				data={getData(nextMilestoneName)} time={"Next"} timeVerb={"is"} />}
 		</div>
 	);
-
 };

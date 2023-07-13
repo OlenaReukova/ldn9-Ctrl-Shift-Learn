@@ -1,11 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Label } from "recharts";
 
-export const CircleChart = ({ data }) => {
-  const totalValue = data.reduce((sum, entry) => sum + entry.value, 0);
-  const percentage = (data[0].value / totalValue) * 100;
-  const [isLabelVisible, setLabelVisible] = useState(false);
+export const CircleChart = ({ targetScore, achievedscore }) => {
+  const gettingNeddedScore = (targetScore, achievedscore) => {
+    const neededScore = targetScore - achievedscore;
+    if (neededScore > 0) {
+      return neededScore;
+    } else {
+      return 0;
+    }
+  };
 
+  const data = [
+    { name: "Group A", value: achievedscore },
+    { name: "Group B", value: gettingNeddedScore() },
+  ];
+
+  // const totalValue = data.reduce((sum, entry) => sum + entry.value, 0);
+  const percentage = (data[0].value / targetScore) * 100;
+  const [isLabelVisible, setLabelVisible] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLabelVisible(true);
