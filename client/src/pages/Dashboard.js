@@ -2,13 +2,14 @@ import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../AppContext";
 import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
-import { MilestoneCard } from "../component/MilestoneCard";
+import { PullRequestCard } from "../component/PullRequestCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
+
 export const Dashboard = () => {
-	const { userName, githubData } = useContext(AppContext);
+	const { userName, githubData, codewarsData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
-	const [currentMilestoneName, setCurrentMilestoneName] = useState("");
+	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
 
 	useEffect(() => {
@@ -27,7 +28,6 @@ export const Dashboard = () => {
 		fetchCohortData();
 	}, [userName]);
 
-	console.log("githubData", githubData);
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -37,9 +37,7 @@ export const Dashboard = () => {
 			.map((item) => item.toLowerCase())
 			.includes(repoName);
 	});
-	console.log("filteredPulls", filteredPulls);
-	console.log(filteredPulls?.length);
-
+	console.log(codewarsData);
 	const {
 		start,
 		html_css,
@@ -89,12 +87,13 @@ export const Dashboard = () => {
 				return currentDate <= timestampForValue;
 			}
 		);
+
 		if (indexOfNextMilestone !== -1) {
-			const [currentMilestoneName] =
+			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
 			const [nextMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone];
-			setCurrentMilestoneName(currentMilestoneName);
+			setCurrentMilestoneName(previousMilestoneName);
 			setNextMilestoneName(nextMilestoneName);
 		} else {
 			console.log("loading...");
@@ -105,7 +104,7 @@ export const Dashboard = () => {
 		return (
 			<div className="dashboard">
 				<DashboardHero />
-				<MilestoneCard
+				<PullRequestCard
 					data={{
 						pulls: milestoneDetails[nextMilestoneName].pulls,
 						codewars: milestoneDetails[nextMilestoneName].codewars,
