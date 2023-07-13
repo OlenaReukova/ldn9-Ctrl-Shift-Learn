@@ -56,7 +56,7 @@ export const Search = () => {
                       Go for It
                     </button>
                 </div>
-                        <div>{error && <p>User does not exist in the organization.</p>}</div>
+                        <div>{error && <p>User does not exist in the CYF.</p>}</div>
             </div>
       );
 };
