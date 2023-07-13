@@ -1,17 +1,14 @@
 import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../AppContext";
 import { DashboardHero } from "../component/DashboardHero";
-import { CodeWarsCard } from "../component/CodeWarsCard";
 import { MilestoneCard } from "../component/MilestoneCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
-
 export const Dashboard = () => {
 	const { userName, githubData, codewarsData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
-
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -27,7 +24,6 @@ export const Dashboard = () => {
 		};
 		fetchCohortData();
 	}, [userName]);
-
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -49,7 +45,6 @@ export const Dashboard = () => {
 		db_week3,
 		fp_week2,
 	} = cohortData;
-
 	const cohortMilestoneDeadlines = useMemo(
 		() => ({
 			start,
@@ -74,7 +69,6 @@ export const Dashboard = () => {
 			fp_week2,
 		]
 	);
-
 	useEffect(() => {
 		let indexOfNextMilestone = 0;
 		const cohortMilestoneDeadlinesArray = Object.entries(
@@ -87,7 +81,6 @@ export const Dashboard = () => {
 				return currentDate <= timestampForValue;
 			}
 		);
-
 		if (indexOfNextMilestone !== -1) {
 			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
@@ -99,21 +92,30 @@ export const Dashboard = () => {
 			console.log("loading...");
 		}
 	}, [cohortMilestoneDeadlines]);
-
-	if (currentMilestoneName && nextMilestoneName) {
-		return (
-			<div className="dashboard">
-				<DashboardHero />
-				<MilestoneCard
-					data={{
-						pulls: milestoneDetails[nextMilestoneName].pulls,
-						codewars: milestoneDetails[nextMilestoneName].codewars,
-						name: nextMilestoneName,
-						deadline: cohortMilestoneDeadlines[nextMilestoneName],
-					}}
-				/>
-				<CodeWarsCard />
-			</div>
-		);
-	}
+	const getData = (value) => {
+		let localDate = new Date(cohortMilestoneDeadlines[value]).toLocaleDateString();
+		return {
+			targetPulls: milestoneDetails[value].pulls,
+			targetRank: milestoneDetails[value].codewars,
+			name: value,
+			naxtDeadline: localDate,
+			achievedPulls: filteredPulls?.length,
+			achievedRank: codewarsData.ranks?.overall?.name,
+			achievedScore: codewarsData.ranks?.languages
+				?.javascript.score,
+		};
+	};
+	return (
+		<div className="dashboard">
+			<DashboardHero data={{
+				achievedPulls: filteredPulls?.length,
+				achievedRank: codewarsData.ranks?.overall?.name,
+			}} />
+			{previousMilestoneName && <MilestoneCard
+				data={getData(previousMilestoneName)} time={"Previous"} timeVerb={"was"}
+			/>}
+			{nextMilestoneName && <MilestoneCard
+				data={getData(nextMilestoneName)} time={"Next"} timeVerb={"is"} />}
+		</div>
+	);
 };
