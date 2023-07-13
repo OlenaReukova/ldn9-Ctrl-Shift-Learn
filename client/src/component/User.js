@@ -11,24 +11,19 @@ export const User = () => {
 	};
 
 	return (
-		<div>
-			<div style={{ display: "flex" }}>
-				<h1> Want to check your progress? Amazing! </h1>
-				<span>🌟</span>
-			</div>
+		<div className="user-container">
+			<h1>Want to check your progress? Amazing! </h1>
 
-			<div className="user-container">
-				<label htmlFor="username">Enter Your GitHub User Name</label>
+			<div className="user-form">
+				<label htmlFor="username" className="form-label">Enter Your GitHub User Name</label>
 				<input
-					className="user-input"
+					className="form-input"
 					type="text"
 					id="username"
 					onChange={handleInputChange}
 				/>
-				<div>
-					<Search />
-				</div>
 			</div>
+			<Search />
 		</div>
 	);
 };

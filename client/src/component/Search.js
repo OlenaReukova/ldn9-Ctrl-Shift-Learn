@@ -48,10 +48,13 @@ export const Search = () => {
 		<div>
 			<div>
 				<button className="user-button" onClick={handleSearch}>
-				<span>let's go!</span><span>🚀</span>
+					<span>let's go!</span>
+					<span>🚀</span>
 				</button>
 			</div>
-			<div>{error && <p>User does not exist in the CYF.</p>}</div>
+			<div style={{ marginTop: "10px", color: "red", fontWeight: "bold" }}>
+				{error && <p>You should be a member of CYF.</p>}
+			</div>
 		</div>
 	);
 };
