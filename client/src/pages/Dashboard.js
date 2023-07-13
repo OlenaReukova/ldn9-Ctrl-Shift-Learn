@@ -2,7 +2,7 @@ import { useEffect, useState, useContext, useMemo } from "react";
 import { AppContext } from "../AppContext";
 import { DashboardHero } from "../component/DashboardHero";
 import { CodeWarsCard } from "../component/CodeWarsCard";
-import { PullRequestCard } from "../component/PullRequestCard";
+import { MilestoneCard } from "../component/MilestoneCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
 export const Dashboard = () => {
@@ -105,7 +105,7 @@ export const Dashboard = () => {
 		return (
 			<div className="dashboard">
 				<DashboardHero />
-				<PullRequestCard
+				<MilestoneCard
 					data={{
 						pulls: milestoneDetails[nextMilestoneName].pulls,
 						codewars: milestoneDetails[nextMilestoneName].codewars,
