@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px dotted black;
   width: 100%;
   row-gap: 30px;
-  background-color: #3C486B;
+  background-color: var(--PrimaryColor);
   padding: 40px 15px;
 }
 .milestone__title-container {
@@ -15,12 +14,12 @@
 }
 .milestone-title {
   row-gap: 0.6rem;
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   color: var(--SecondaryColor);
 }
 .deadline-prgph{
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center; 
 }
 .milestone__card-subcontainer {
@@ -39,22 +38,22 @@
   text-align: center; 
 }
 .factor-title {
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 .card-prgph {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 1.625rem;
 }
 .card-prgph-number {
   color: var(--yellow);
-  font-size: 32px;
+  font-size: 2rem;
   padding: 10px 0 0 0;
 }
 p{
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .kyu {
-  color: white;
-  font-size: 20px;
+  color: var(--white);
+  font-size: 1.25rem;
 }
