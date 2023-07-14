@@ -27,12 +27,13 @@
 }
 .form-input {
 	padding: 2px;
-	border: var(--red);
+	border: var(--red) solid;
 	border-radius: 4px;
 }
 .search-button {
 	position: absolute;
 	top: 58%;
+	margin-top: 10px;
 }
 .user-button {
 	padding: 2px 12px 2px 12px;
@@ -43,7 +44,7 @@
 	cursor: pointer;
 }
 .user-button-span {
-	margin-right: 10px;
+	margin-right: 4px;
 }
 
 .error {
