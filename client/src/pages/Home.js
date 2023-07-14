@@ -1,9 +1,10 @@
 import { User } from "../component/User";
+
 export const Home = () => {
 	return (
-		<main className="home" role="main">
+		<main className="home">
 			<div className="home-card">
-			<User />
+				<User />
 			</div>
 		</main>
 	);
