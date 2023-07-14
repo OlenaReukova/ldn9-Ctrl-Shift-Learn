@@ -8,13 +8,13 @@ export const Header = () => {
 				src="https://syllabus.codeyourfuture.io/img/logo.png"
 				alt="CYF"
 			/>
-			<div className="topic">
+			<p className="topic">
 				<span className="cyf">CYF</span>{" "}
 				<span
 					className="progress">
 					progress tracker
 				</span>
-			</div>
+			</p>
 			<p className="team-name">Ctrl + Shift + Learn</p>
 		</header>
 	);

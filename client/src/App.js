@@ -41,10 +41,6 @@ const App = () => {
 					path="/admin/cohorts/:id/updatetrainee/:id"
 					element={<UpdateTrainee />}
 				/>
-<<<<<<< HEAD
-				<Route path="/about" element={<About />} />
-=======
->>>>>>> main
 			</Routes>
 		</AppContext.Provider>
 	);
