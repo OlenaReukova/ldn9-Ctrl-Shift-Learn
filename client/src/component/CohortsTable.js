@@ -22,11 +22,6 @@ export const CohortsTable = ({ cohortsData }) => {
 											<Button title={"view"} />
 										</Link>
 									</span>
-									<span>
-										<Link to={`/admin/cohorts/updatecohort/${cohort.id}`}>
-											<Button title={"Edit"} />
-										</Link>
-									</span>
 								</td>
 							</tr>
 						))}

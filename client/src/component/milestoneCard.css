@@ -1,0 +1,37 @@
+.milestone__card-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted black;
+  width: 100%;
+  row-gap:30px
+}
+
+.milestone__card-subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px dotted black;
+  row-gap:20px;
+
+}
+
+.factor-container{
+  width: 50%;
+  row-gap: 20px;
+}
+
+.milestone-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.factor-title {
+  font-size: 1rem;
+}
+
+.card-prgph {
+ display: flex;
+ flex-direction: column;
+}
+

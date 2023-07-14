@@ -10,12 +10,14 @@ import { Cohorts } from "./pages/Cohorts";
 import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
 import { Cohort } from "./pages/Cohort";
+import { Header } from "./component/Header";
 import { UpdateCohort } from "./pages/UpdateCohort";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
 	const [codewarsData, setCodewarsData] = useState([]);
 	const [githubData, setGitHubData] = useState([]);
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -27,6 +29,7 @@ const App = () => {
 				setGitHubData,
 			}}
 		>
+			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/result" element={<Dashboard />} />

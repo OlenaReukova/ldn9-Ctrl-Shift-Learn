@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { } from "react-router-dom";
 import { Milestones } from "../component/Milestones";
 import { Trainees } from "../component/Trainees";
-
+import { Button } from "../component/Button";
 export const Cohort = () => {
     const [milestones, setMilestone] = useState([]);
     const [trainees, setTrainees] = useState([]);
@@ -35,6 +35,11 @@ export const Cohort = () => {
             <Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>
                 Add New Trainee
             </Link>
+            <span>
+										<Link className="link" to={`/admin/cohorts/updatecohort/${id}`}>
+											Edit Cohort
+										</Link>
+									</span>
         </div>
     );
 };

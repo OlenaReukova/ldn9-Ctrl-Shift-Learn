@@ -82,6 +82,7 @@
 		"morgan": "^1.10.0",
 		"node-pg-migrate": "^6.2.2",
 		"pg": "^8.11.1",
+		"recharts": "^2.7.2",
 		"winston": "^3.8.2"
 	},
 	"engines": {

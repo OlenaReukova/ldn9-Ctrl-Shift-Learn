@@ -32,10 +32,10 @@ export const UpdateCohort = () => {
 
 			const data = await response.json();
 			console.log(data);
-			setUpdateMessage("Congratulations! Cohort successfully updated! 🎉");
-			setTimeout(() => {
-				setUpdateMessage("");
-			}, 3000);
+			setUpdateMessage("Congratulations! Cohort successfully updated! ");
+			// setTimeout(() => {
+			// 	setUpdateMessage("");
+			// }, 3000);
 		} catch (error) {
 			console.log(error);
 		}
@@ -140,7 +140,7 @@ export const UpdateCohort = () => {
 							marginTop: "1rem",
 							fontSize: "1.5rem",
 							fontWeight: "bold",
-							color: "#2979FF",
+							color: "#ED4343",
 						}}
 					>
 						{updateMessage}
