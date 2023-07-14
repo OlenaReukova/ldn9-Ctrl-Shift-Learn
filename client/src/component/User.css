@@ -5,12 +5,11 @@
 	align-items: center;
 	position: relative;
 	height: 100%;
-	font-family: "Comic Sans MS", cursive;
 }
 .home-heading {
 	position: absolute;
 	top: 23%;
-	color: #fffbfb;
+	color: var(--SecondaryColor);
 	font-size: 32px;
 	font-weight: 100;
 	text-align: center;
@@ -21,14 +20,14 @@
 	gap: 10px;
 	position: absolute;
 	top: 45%;
-	color: #fffbfb;
+	color:var(--SecondaryColor);
 }
 .form-label {
 	font-size: 26px;
 }
 .form-input {
 	padding: 2px;
-	border: #ed4343 solid;
+	border: var(--red);
 	border-radius: 4px;
 }
 .search-button {
@@ -37,12 +36,11 @@
 }
 .user-button {
 	padding: 2px 12px 2px 12px;
-	background-color: #ed4343;
-	color: #fffbfb;
+	background-color:var(--red);
+	color:var(--SecondaryColor);
 	border-radius: 10px;
 	font-size: large;
 	cursor: pointer;
-	font-family: "Comic Sans MS", cursive;
 }
 .user-button-span {
 	margin-right: 10px;
@@ -50,7 +48,7 @@
 
 .error {
 	margin-top: 10px;
-	color: #ed4343;
+	color:var(--red);
 	font-weight: "bold";
 	position: absolute;
 }

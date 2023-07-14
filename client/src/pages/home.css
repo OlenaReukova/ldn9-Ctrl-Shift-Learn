@@ -3,15 +3,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #fffbfb;
-	position: relative;
+	background-color:var(--SecondaryColor);
+	padding: 22px;
+
 }
 
 .home-card {
 	height: 80%;
-	width: 95%;
-	background-color: #3c486b;
+	width: 100%;
+	background-color: var(--PrimaryColor);
 	border-radius: 8px;
-	position: absolute;
-	top: 1%;
 }
