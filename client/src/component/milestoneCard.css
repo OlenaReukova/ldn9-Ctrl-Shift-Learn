@@ -3,8 +3,8 @@
   flex-direction: column;
   width: 100%;
   row-gap: 30px;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
   background-color: var(--PrimaryColor);
   padding: 40px 15px;
 }
