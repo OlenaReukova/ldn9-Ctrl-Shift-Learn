@@ -11,6 +11,9 @@ export const Dashboard = () => {
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
+	const [ShowPCard, setShowPCard] = useState("false");
+	const [ShowNCard, setShowNCard] = useState("false");
+
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -71,6 +74,17 @@ export const Dashboard = () => {
 			fp_week2,
 		]
 	);
+	const currentDate = new Date().getTime();
+	useEffect(() => {
+		const startDate = new Date(cohortData.start).getTime();
+		const finishDate = new Date(cohortData["fp_week2"]).getTime();
+		currentDate < startDate && setShowPCard(true);
+		currentDate > finishDate && setShowNCard(true);
+		console.log(finishDate);
+	// console.log(ShowNCard);
+	console.log(currentDate > finishDate);
+	},[ShowNCard, ShowPCard, cohortData, currentDate]);
+
 	useEffect(() => {
 		let indexOfNextMilestone = 0;
 		const cohortMilestoneDeadlinesArray = Object.entries(
@@ -78,7 +92,6 @@ export const Dashboard = () => {
 		);
 		indexOfNextMilestone = cohortMilestoneDeadlinesArray.findIndex(
 			([, value]) => {
-				const currentDate = new Date().getTime();
 				const timestampForValue = new Date(value).getTime();
 				return currentDate <= timestampForValue;
 			}
@@ -93,7 +106,7 @@ export const Dashboard = () => {
 		} else {
 			console.log("loading...");
 		}
-	}, [cohortMilestoneDeadlines]);
+	}, [cohortMilestoneDeadlines, currentDate]);
 
 	const getData = (value) => {
 		let localDate = new Date(cohortMilestoneDeadlines[value]).toLocaleDateString();
@@ -118,7 +131,10 @@ export const Dashboard = () => {
 				data={getData(previousMilestoneName)} time="Previous" timeVerb="was"
 			/>}
 			{nextMilestoneName && <MilestoneCard
-				data={getData(nextMilestoneName)} display = "none" time="Next" timeVerb="is" />}
+				data={getData(nextMilestoneName)} display="none" time="Next" timeVerb="is" />}
+				{ShowNCard && <MilestoneCard
+				data={getData("start")} display="none" time="Next" timeVerb="is" />}
+
 		</div>
 	);
 };
