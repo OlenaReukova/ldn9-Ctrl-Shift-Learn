@@ -1,4 +1,5 @@
 import { User } from "../component/User";
+import "./Home.css";
 
 export const Home = () => {
 	return (
