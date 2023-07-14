@@ -1,16 +1,17 @@
 .milestone__card-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   row-gap: 30px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   background-color: var(--PrimaryColor);
   padding: 40px 15px;
 }
 .milestone__title-container {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  gap: 60px;
 }
 .milestone-title {
   row-gap: 0.6rem;
@@ -25,11 +26,16 @@
 .milestone__card-subcontainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: rgba(94, 105, 140, 0.5);
+  padding:10px 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .factor-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  width: 50%;
   row-gap: 2.5rem;
 }
 .milestone-title {
@@ -38,12 +44,12 @@
   text-align: center; 
 }
 .factor-title {
-  font-size: 1.625rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 .card-prgph {
   display: flex;
   flex-direction: column;
-  font-size: 1.625rem;
 }
 .card-prgph-number {
   color: var(--yellow);
