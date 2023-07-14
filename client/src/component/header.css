@@ -25,6 +25,7 @@ header {
 	padding: 1px;
 }
 .progress {
+	color: var(--black);
 	font-size: 1.25rem;
 	padding: 3px;
 }
