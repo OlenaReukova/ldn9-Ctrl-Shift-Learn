@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
 
 export const CohortsTable = ({ cohortsData }) => {
 	return (
@@ -17,7 +16,7 @@ export const CohortsTable = ({ cohortsData }) => {
 							<tr key={cohort.id}>
 								<td>{cohort.name}</td>
 								<td>
-									<Link to={`${cohort.id}`}>view</Link>
+									<Link className="link" to={`${cohort.id}`}>view</Link>
 								</td>
 							</tr>
 						))}

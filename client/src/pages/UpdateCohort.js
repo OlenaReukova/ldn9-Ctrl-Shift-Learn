@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../component/Button";
 import { InputeField } from "../component/InputeField";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const UpdateCohort = () => {
 	const [formInput, setFormInput] = useState({
@@ -18,6 +19,7 @@ export const UpdateCohort = () => {
 	});
 	const [updateMessage, setUpdateMessage] = useState("");
 	const { id } = useParams();
+	const navigate = useNavigate();
 
 	const updateCohort = async (input) => {
 		console.log(input);
@@ -32,9 +34,9 @@ export const UpdateCohort = () => {
 
 			const data = await response.json();
 			setUpdateMessage("Congratulations! Cohort successfully updated! ");
-			// setTimeout(() => {
-			// 	setUpdateMessage("");
-			// }, 3000);
+			setTimeout(() => {
+				navigate(-1);
+			}, 4000);
 		} catch (error) {
 			console.log(error);
 		}
