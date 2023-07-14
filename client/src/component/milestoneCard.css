@@ -21,3 +21,17 @@
   row-gap: 20px;
 }
 
+.milestone-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.factor-title {
+  font-size: 1rem;
+}
+
+.card-prgph {
+ display: flex;
+ flex-direction: column;
+}
+
