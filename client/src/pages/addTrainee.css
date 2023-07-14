@@ -5,16 +5,13 @@
 	gap: 20px;
 }
 
-form {
+.addtrainee-input-form {
 	display: flex;
 	flex-direction: column;
 	width: 60%;
 }
-label {
-	border-bottom: 1px solid black;
-	text-align: left;
-}
-input {
+
+.addtrainee-input {
 	border: none;
 	text-align: center;
 	margin-bottom: 10px;

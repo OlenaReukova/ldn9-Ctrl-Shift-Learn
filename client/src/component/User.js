@@ -1,8 +1,7 @@
-import "./User.css";
 import { useContext } from "react";
 import { Search } from "../component/Search";
 import { AppContext } from "../AppContext";
-import { Link } from "react-router-dom";
+import "./User.css";
 
 export const User = () => {
 	const { setUserName } = useContext(AppContext);
@@ -13,16 +12,20 @@ export const User = () => {
 
 	return (
 		<div className="user-container">
-			<label htmlFor="username">Your GitHub User Name</label>
-			<input
-				className="user-input"
-				type="text"
-				id="username"
-				onChange={handleInputChange}
-			/>
-			<Link to="/result">
+			<h1 className="home-heading">Want to check your progress? Amazing! </h1>
+
+			<div className="user-details">
+				<label htmlFor="username">Enter Your GitHub User Name</label>
+				<input
+					className="form-input"
+					type="text"
+					id="username"
+					onChange={handleInputChange}
+				/>
+			</div>
+			<div className="search-button">
 				<Search />
-			</Link>
+			</div>
 		</div>
 	);
 };

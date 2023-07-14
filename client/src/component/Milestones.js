@@ -25,50 +25,50 @@ console.log(milestones["m_1"]);
                 <tr>
                     <td>HTML-CSS</td>
                     <td>{milestones["m_1"]}</td>
-                    <td>{milestonesData["HTML-CSS"].pulls}</td>
-                    <td>{milestonesData["HTML-CSS"].codewars}</td>
+                    <td>{milestonesData["html_css"].pulls}</td>
+                    <td>{milestonesData["html_css"].codewars}</td>
                 </tr>
                 <tr>
                     <td>JS1-Week2</td>
                     <td>{milestones["m_2"]}</td>
-                    <td>{milestonesData["JS1-Week2"].pulls}</td>
-                    <td>{milestonesData["JS1-Week2"].codewars}</td>
+                    <td>{milestonesData["js1_week2"].pulls}</td>
+                    <td>{milestonesData["js1_week2"].codewars}</td>
                 </tr>
                 <tr>
                     <td>JS2-Week1</td>
                     <td>{milestones["m_3"]}</td>
-                    <td>{milestonesData["JS2-Week1"].pulls}</td>
-                    <td>{milestonesData["JS2-Week1"].codewars}</td>
+                    <td>{milestonesData["js2_week1"].pulls}</td>
+                    <td>{milestonesData["js2_week1"].codewars}</td>
                 </tr>
                 <tr>
                     <td>JS3-Week3</td>
                     <td>{milestones["m_4"]}</td>
-                    <td>{milestonesData["JS3-Week3"].pulls}</td>
-                    <td>{milestonesData["JS3-Week3"].codewars}</td>
+                    <td>{milestonesData["js3_week3"].pulls}</td>
+                    <td>{milestonesData["js3_week3"].codewars}</td>
                 </tr>
                 <tr>
                     <td>React-Week2</td>
                     <td>{milestones["m_5"]}</td>
-                    <td>{milestonesData["React-Week2"].pulls}</td>
-                    <td>{milestonesData["React-Week2"].codewars}</td>
+                    <td>{milestonesData["react_week2"].pulls}</td>
+                    <td>{milestonesData["react_week2"].codewars}</td>
                 </tr>
                 <tr>
                     <td>Node-Week2</td>
                     <td>{milestones["m_6"]}</td>
-                    <td>{milestonesData["Node-Week2"].pulls}</td>
-                    <td>{milestonesData["Node-Week2"].codewars}</td>
+                    <td>{milestonesData["node_week2"].pulls}</td>
+                    <td>{milestonesData["node_week2"].codewars}</td>
                 </tr>
                 <tr>
                     <td>DB-Week3</td>
                     <td>{milestones["m_7"]}</td>
-                    <td>{milestonesData["DB-Week3"].pulls}</td>
-                    <td>{milestonesData["DB-Week3"].codewars}</td>
+                    <td>{milestonesData["db_week3"].pulls}</td>
+                    <td>{milestonesData["db_week3"].codewars}</td>
                 </tr>
                 <tr>
                     <td>FP-Week2</td>
                     <td>{milestones["m_8"]}</td>
-                    <td>{milestonesData["FP-Week2"].pulls}</td>
-                    <td>{milestonesData["FP-Week2"].codewars}</td>
+                    <td>{milestonesData["fp_week2"].pulls}</td>
+                    <td>{milestonesData["fp_week2"].codewars}</td>
                 </tr>
             </tbody>
         </table>
