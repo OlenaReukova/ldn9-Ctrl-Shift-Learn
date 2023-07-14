@@ -20,14 +20,14 @@
 	gap: 10px;
 	position: absolute;
 	top: 45%;
-	color:var(--SecondaryColor);
+	color: var(--SecondaryColor);
 }
 .form-label {
 	font-size: 26px;
 }
 .form-input {
 	padding: 2px;
-	border: var(--red);
+	border: var(--red) solid;
 	border-radius: 4px;
 }
 .search-button {
@@ -36,19 +36,19 @@
 }
 .user-button {
 	padding: 2px 12px 2px 12px;
-	background-color:var(--red);
-	color:var(--SecondaryColor);
+	background-color: var(--red);
+	color: var(--SecondaryColor);
 	border-radius: 10px;
 	font-size: large;
 	cursor: pointer;
 }
 .user-button-span {
-	margin-right: 10px;
+	margin-right: 4px;
 }
 
 .error {
 	margin-top: 10px;
-	color:var(--red);
+	color: var(--red);
 	font-weight: "bold";
 	position: absolute;
 }
