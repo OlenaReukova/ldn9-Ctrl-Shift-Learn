@@ -28,7 +28,7 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
 
   return (
     <div>
-      <ResponsiveContainer width="95%" height={130}>
+      <ResponsiveContainer width="100%" height={130}>
         <PieChart >
           <Pie
             data={data}
@@ -42,14 +42,14 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
               if (index === 1) {
                 return <Cell key={`cell-${index}`} fill="red" />;
               }
-              return <Cell key={`cell-${index}`} fill="green" />;
+              return <Cell key={`cell-${index}`} fill="#F9D949" />;
             })}
             <Label
               value={`${percentage.toFixed(0)}%`}
               position="center"
               fill="black"
               style={{
-                fontSize: "32px",
+                fontSize: "20px",
                 fontWeight: "bold",
                 fontFamily: "Roboto",
                 opacity: isLabelVisible ? 1 : 0,
