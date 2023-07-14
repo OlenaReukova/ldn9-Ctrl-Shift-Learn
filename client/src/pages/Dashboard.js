@@ -118,7 +118,7 @@ export const Dashboard = () => {
 				data={getData(previousMilestoneName)} time="Previous" timeVerb="was"
 			/>}
 			{nextMilestoneName && <MilestoneCard
-				data={getData(nextMilestoneName)} time="Next" timeVerb="is" />}
+				data={getData(nextMilestoneName)} display = "none" time="Next" timeVerb="is" />}
 		</div>
 	);
 };
