@@ -35,6 +35,11 @@ export const Cohort = () => {
             <Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>
                 Add New Trainee
             </Link>
+            <span>
+										<Link className="link" to={`/admin/cohorts/updatecohort/${id}`}>
+											Edit Cohort
+										</Link>
+									</span>
         </div>
     );
 };
