@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { } from "react-router-dom";
 import { Milestones } from "../component/Milestones";
 import { Trainees } from "../component/Trainees";
-import { Button } from "../component/Button";
+
 export const Cohort = () => {
     const [milestones, setMilestone] = useState([]);
     const [trainees, setTrainees] = useState([]);
