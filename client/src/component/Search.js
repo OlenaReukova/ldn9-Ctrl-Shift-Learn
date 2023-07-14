@@ -19,8 +19,7 @@ export const Search = () => {
             .catch((err) => {
                 console.error(err);
             });
-        ///////GETING gITHUB PULL REQUEST ON CYF REPOSITORI ====> THIS DATA NEED TO BE FILLTERD WHEN WE GOT MANDATORY COURSEWORK
-        ////THERE IS ANOTHER APPI AS WELL BUT NOT SURE WHICH ONE CAN GET BETTER RESULT(https://api.github.com/repos/OWNER/REPO/pulls))
+        ///////GETING GITHUB PULL REQUEST ON CYF REPOSITORI
         fetch(`https://api.github.com/search/issues?q=is:pr%20author:${userName}%20user:codeyourfuture`)
             .then((res) => {
                 if (!res.ok) {
@@ -38,5 +37,9 @@ export const Search = () => {
     return (
         <button className="user-button" onClick={() => handleSearch()} >search</button>
     );
-
 };
+
+
+
+
+

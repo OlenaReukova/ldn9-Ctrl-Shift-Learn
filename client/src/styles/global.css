@@ -5,9 +5,9 @@
 }
 
 :root {
-  --cyf-color: #ff1e1e;
+  --cyf-color: #ff0000;
   --white: #ffffff;
-  --gray: #808080;
+  --gray: #c5c5c5;
   --black: #000000:
 }
 
@@ -60,3 +60,7 @@ h3 {
 	font-size: 2rem;
 }
   
+*:before,
+  *:after {
+    box-sizing: border-box;
+  }
