@@ -21,7 +21,7 @@
 }
 .deadline-prgph{
   font-size: 1.125rem;
-  text-align: center; 
+  text-align: center;
 }
 .milestone__card-subcontainer {
   display: flex;
@@ -34,14 +34,15 @@
 }
 .factor-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-direction: column;
   row-gap: 2.5rem;
+  width: 50%;
 }
 .milestone-title {
   display: flex;
   flex-direction: column;
-  text-align: center; 
+  text-align: center;
 }
 .factor-title {
   font-size: 1.4rem;
@@ -57,7 +58,7 @@
   padding: 10px 0 0 0;
 }
 p{
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 }
 .kyu {
   color: var(--white);
