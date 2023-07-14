@@ -1,0 +1,39 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 60px;
+	background-color: var(--SecondaryColor);
+	position: fixed;
+
+	
+}
+.logo {
+	height: 40px;
+	margin-left: 10px;
+	display: none;
+}
+.topic {
+	display: flex;
+	flex-direction: row;
+}
+
+.cyf {
+	color: var(--red);
+	font-size: 1.5rem;
+	padding: 1px;
+}
+.progress {
+	color: var(--black);
+	font-size: 1.25rem;
+	padding: 3px;
+}
+.team-name {
+	color:var(--red);
+	font-size: 0.8rem;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	margin-right: 10px;
+	display: none;
+  }

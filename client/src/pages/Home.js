@@ -3,8 +3,10 @@ import "./Home.css";
 
 export const Home = () => {
 	return (
-		<main className="main_container" role="main">
-			<User />
+		<main className="home">
+			<div className="home-card">
+				<User />
+			</div>
 		</main>
 	);
 };
