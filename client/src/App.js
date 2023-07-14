@@ -11,7 +11,6 @@ import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
 import { Cohort } from "./pages/Cohort";
 import { Header } from "./component/Header";
-import { About } from "./pages/About";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
