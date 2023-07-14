@@ -31,7 +31,6 @@ export const UpdateCohort = () => {
 			});
 
 			const data = await response.json();
-			console.log(data);
 			setUpdateMessage("Congratulations! Cohort successfully updated! ");
 			// setTimeout(() => {
 			// 	setUpdateMessage("");

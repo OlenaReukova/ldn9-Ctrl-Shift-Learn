@@ -17,11 +17,7 @@ export const CohortsTable = ({ cohortsData }) => {
 							<tr key={cohort.id}>
 								<td>{cohort.name}</td>
 								<td>
-									<span>
-										<Link to={`${cohort.id}`}>
-											<Button title={"view"} />
-										</Link>
-									</span>
+									<Link to={`${cohort.id}`}>view</Link>
 								</td>
 							</tr>
 						))}

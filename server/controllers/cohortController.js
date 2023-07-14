@@ -16,7 +16,8 @@ export const getCohort = async (req, res) => {
 		const { id } = req.params;
 		const traineesQuery =
 			"SELECT * FROM trainees WHERE cohort_id = $1 ORDER BY trainees Asc";
-		const milestonesQuery = " SELECT * FROM cohorts WHERE id = $1 ORDER BY cohorts Asc";
+		const milestonesQuery =
+			" SELECT * FROM cohorts WHERE id = $1 ORDER BY cohorts Asc";
 		const traineesResult = await db.query(traineesQuery, [id]);
 		const milestonesResult = await db.query(milestonesQuery, [id]);
 		const trainees = traineesResult.rows;
@@ -39,7 +40,7 @@ export const getCohort = async (req, res) => {
 export const createCohort = async (req, res) => {
 	try {
 		const { name, start_date, m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8 } =
-			req.body; //Destructuring
+			req.body;
 		if (
 			!name ||
 			!start_date ||
