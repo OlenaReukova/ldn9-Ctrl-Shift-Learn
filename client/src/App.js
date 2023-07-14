@@ -10,6 +10,7 @@ import { Cohorts } from "./pages/Cohorts";
 import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
 import { Cohort } from "./pages/Cohort";
+import { Header } from "./component/Header";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
@@ -27,6 +28,7 @@ const App = () => {
 				setGitHubData,
 			}}
 		>
+			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/result" element={<Dashboard />} />
