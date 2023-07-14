@@ -1,0 +1,9 @@
+.pr_card {
+position: absolute;
+width: 388px;
+height: 568px;
+left: 20px;
+right: 20px;
+top: 169px;
+background: var(--PrimaryColor);
+}
