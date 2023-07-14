@@ -4,7 +4,6 @@
   width: 100%;
   row-gap: 30px;
   justify-content: center;
-  align-items: center;
   background-color: var(--PrimaryColor);
   padding: 40px 15px;
 }

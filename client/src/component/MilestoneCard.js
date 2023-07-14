@@ -24,7 +24,7 @@ export const MilestoneCard = ({
             </div>
             <div className="milestone__card-subcontainer">
                 <div className="factor-container">
-                    <p className="factor-title">Pull Requests</p>
+                    <p className="factor-title">PRs</p>
                     <p className="card-prgph" >
                         <span>Target:</span>
                         <span className="card-prgph-number">{data.targetPulls}</span>
