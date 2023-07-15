@@ -47,7 +47,7 @@ export const MilestoneCard = ({
                         <span className="card-prgph-number">{data.achievedRank} <span className="kyu">Kyu</span></span>
                     </p>
                     <CircleChart targetScore={getCodewarsScore(data.targetRank)} achievedscore={data.achievedScore} />
-                    <p style={{ display: display }}>{checkMilestone(data.targetRank, data.achievedRank)} Milestone</p>
+                    <p style={{ display: display }}>{checkMilestone(getCodewarsScore(data.targetRank), data.achievedScore)} Milestone</p>
                 </div>
             </div>
         </div>
