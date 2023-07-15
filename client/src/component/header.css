@@ -7,8 +7,8 @@ header {
 	background-color: var(--SecondaryColor);
 }
 .logo {
-	height: 40px;
-	margin-left: 10px;
+	height: 130px;
+	/* margin-left: 10px; */
 	display: none;
 }
 .topic {
@@ -32,7 +32,7 @@ header {
 }
 .team-name {
 	color: var(--red);
-	font-size: 0.8rem;
+	font-size: 1.3rem;
 	letter-spacing: 3px;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	margin-right: 10px;
