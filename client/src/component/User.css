@@ -8,10 +8,10 @@
 }
 .home-heading {
 	position: absolute;
-	top: 23%;
+	top: 26%;
 	color: var(--SecondaryColor);
-	font-size: 32px;
-	font-weight: 100;
+	font-size: 26px;
+	/* font-weight: 100; */
 	text-align: center;
 }
 .user-details {
@@ -26,9 +26,10 @@
 	font-size: 26px;
 }
 .form-input {
-	padding: 2px;
+	padding: 5px;
 	border: var(--red) solid;
 	border-radius: 4px;
+	color: var(--gray);
 }
 .search-button {
 	position: absolute;
@@ -50,5 +51,10 @@
 	margin-top: 10px;
 	color: var(--red);
 	font-weight: "bold";
-	position: absolute;
+	/* position: absolute; */
+}
+@media (min-width: 650px) {
+	.home-heading {
+		font-size: 32px;
+	}
 }

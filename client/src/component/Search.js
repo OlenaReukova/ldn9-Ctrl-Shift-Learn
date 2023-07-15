@@ -47,7 +47,7 @@ export const Search = () => {
 	return (
 		<>
 			<button className="user-button" onClick={handleSearch}>
-				<span className="user-button-span">{"let's go!"}</span>
+				<span className="user-button-span">{"Let's go!"}</span>
 			</button>
 			{error && <p className="error">You should be a member of CYF.</p>}
 		</>

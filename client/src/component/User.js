@@ -17,6 +17,8 @@ export const User = () => {
 			<div className="user-details">
 				<label htmlFor="username">Enter Your GitHub User Name</label>
 				<input
+					placeholder="PeteLindsell
+				"
 					className="form-input"
 					type="text"
 					id="username"
