@@ -18,13 +18,13 @@ export const MilestoneCard = ({
                     <span>{time} Milestone</span>
                     <span>{data.name.toUpperCase()}</span>
                 </p>
-                <p style={{ display: display }} className="deadline-prgph">
-                    Deadline {timeVerb} {data.deadline}
+                <p className="deadline-prgph">
+                    Deadline {timeVerb} {data.deadline !=="Invalid Date" ? data.deadline :"find a job"}
                 </p>
             </div>
             <div className="milestone__card-subcontainer">
                 <div className="factor-container">
-                    <p className="factor-title">PRs</p>
+                    <p className="factor-title">Pull Requests</p>
                     <p className="card-prgph" >
                         <span>Target:</span>
                         <span className="card-prgph-number">{data.targetPulls}</span>

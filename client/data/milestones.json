@@ -34,5 +34,9 @@
     "fp_week2": {
         "pulls": 20,
         "codewars": 5
+    },
+    "post_grad": {
+        "pulls": 27,
+        "codewars": 4
     }
 }
