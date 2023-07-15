@@ -133,7 +133,7 @@ export const Dashboard = () => {
 		<div className="dashboard__container">
 			{!!filteredPulls?.length && codewarsData.ranks?.overall.name && <DashboardHero
 				achievedPulls={filteredPulls?.length}
-				achievedRank={codewarsData.ranks?.overall?.name}
+				achievedRank={codewarsData.ranks?.overall.rank * -1}
 			/>}
 			{previousMilestoneName && <MilestoneCard
 				data={getData(previousMilestoneName)} time="Previous" timeVerb="was"
