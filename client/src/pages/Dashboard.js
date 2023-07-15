@@ -77,17 +77,17 @@ export const Dashboard = () => {
 		]
 	);
 	const currentDate = new Date().getTime();
-	useEffect(() => {
-		const startDate = new Date(cohortData.start).getTime();
-		const finishDate = new Date(cohortData["fp_week2"]).getTime();
-		if (currentDate < startDate) {
-			return setShowCard(true);
-		}
-		if (currentDate > finishDate) {
-			return setShowBothCard(true);
-		}
+	// useEffect(() => {
+	// 	const startDate = new Date(cohortData.start).getTime();
+	// 	const finishDate = new Date(cohortData["fp_week2"]).getTime();
+	// 	if (currentDate < startDate) {
+	// 		return setShowCard(true);
+	// 	}
+	// 	if (currentDate > finishDate) {
+	// 		return setShowBothCard(true);
+	// 	}
 
-	}, [ShowCard, cohortData, currentDate]);
+	// }, [ShowCard, cohortData, currentDate]);
 
 	useEffect(() => {
 		let indexOfNextMilestone = -1;
@@ -107,8 +107,12 @@ export const Dashboard = () => {
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone];
 			setCurrentMilestoneName(previousMilestoneName);
 			setNextMilestoneName(nextMilestoneName);
-		} else {
-			console.log("loading...");
+		} if (indexOfNextMilestone === 0){
+			return setShowCard(true);
+		}
+
+		if (indexOfNextMilestone === -1){
+			return setShowBothCard(true);
 		}
 	}, [cohortMilestoneDeadlines, currentDate]);
 
