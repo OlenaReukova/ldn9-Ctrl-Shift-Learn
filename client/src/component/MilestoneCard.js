@@ -19,7 +19,7 @@ export const MilestoneCard = ({
                     <span>{data.name.toUpperCase()}</span>
                 </p>
                 <p className="deadline-prgph">
-                    Deadline {timeVerb} {data.deadline}
+                    Deadline {timeVerb} {data.deadline !=="Invalid Date" ? data.deadline :"find a job"}
                 </p>
             </div>
             <div className="milestone__card-subcontainer">
