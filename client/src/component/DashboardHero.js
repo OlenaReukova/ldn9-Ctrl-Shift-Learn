@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import "./dashboardHero.css";
+
 export const DashboardHero = (data) => {
   const { userName } = useContext(AppContext);
   return (
