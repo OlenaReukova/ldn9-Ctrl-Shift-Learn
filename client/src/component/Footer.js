@@ -21,7 +21,7 @@ export const Footer = () => {
 					/>
 				</form>
 				<div className="footer-bottom">
-					<p>
+					<p className="footer-paraghraph">
 						© All rights reserved | Registered{" "}
 						<a href="https://register-of-charities.charitycommission.gov.uk/charity-details/?regid=1174929&subid=0">
 							UK
