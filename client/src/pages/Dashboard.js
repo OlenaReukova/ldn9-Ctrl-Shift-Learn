@@ -11,7 +11,8 @@ export const Dashboard = () => {
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
-	const [ShowCard, setShowCard] = useState(null);
+	const [ShowCard, setShowCard] = useState(false);
+	const [ShowBothCard, setShowBothCard] = useState(false);
 	// const [ShowNCard, setShowNCard] = useState(false);
 
 	useEffect(() => {
@@ -79,15 +80,17 @@ export const Dashboard = () => {
 	useEffect(() => {
 		const startDate = new Date(cohortData.start).getTime();
 		const finishDate = new Date(cohortData["fp_week2"]).getTime();
-		currentDate < startDate && setShowCard(true);
-		currentDate > finishDate && setShowCard(false);
-		console.log(finishDate);
-		// console.log(ShowNCard);
-		console.log(currentDate > finishDate);
+		if (currentDate < startDate) {
+			return setShowCard(true);
+		}
+		if (currentDate > finishDate) {
+			return setShowBothCard(true);
+		}
+
 	}, [ShowCard, cohortData, currentDate]);
 
 	useEffect(() => {
-		let indexOfNextMilestone = 0;
+		let indexOfNextMilestone = -1;
 		const cohortMilestoneDeadlinesArray = Object.entries(
 			cohortMilestoneDeadlines
 		);
@@ -97,7 +100,7 @@ export const Dashboard = () => {
 				return currentDate <= timestampForValue;
 			}
 		);
-		if (indexOfNextMilestone !== -1) {
+		if (indexOfNextMilestone !== -1 && indexOfNextMilestone !== 0) {
 			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
 			const [nextMilestoneName] =
@@ -115,7 +118,7 @@ export const Dashboard = () => {
 			targetPulls: milestoneDetails[value].pulls,
 			targetRank: milestoneDetails[value].codewars,
 			name: value,
-			deadline: localDate ,
+			deadline: localDate,
 			achievedPulls: filteredPulls?.length,
 			achievedRank: codewarsData.ranks?.overall.rank * -1,
 			achievedScore: codewarsData.ranks?.languages
@@ -133,11 +136,11 @@ export const Dashboard = () => {
 			/>}
 			{nextMilestoneName && <MilestoneCard
 				data={getData(nextMilestoneName)} display="none" time="Next" timeVerb="is" />}
-			{ShowCard && (<>
+			{!previousMilestoneName && !nextMilestoneName && ShowCard && (<>
 				<MilestoneCard
 					data={getData("start")} display="none" time="Next" timeVerb="is" />
 			</>)}
-			{!ShowCard && (<>
+			{!previousMilestoneName && !nextMilestoneName && !ShowCard && ShowBothCard && (<>
 				<MilestoneCard
 					data={getData("fp_week2")} time="Previous" timeVerb="was"
 				/><MilestoneCard
