@@ -135,6 +135,7 @@ export const Dashboard = () => {
 				achievedPulls={filteredPulls?.length}
 				achievedRank={codewarsData.ranks?.overall.rank * -1}
 			/>}
+			<div className="main-container">
 			{previousMilestoneName && <MilestoneCard
 				data={getData(previousMilestoneName)} time="Previous" timeVerb="was"
 			/>}
@@ -151,6 +152,7 @@ export const Dashboard = () => {
 					data={getData("post_grad")} display="none" time="Next" timeVerb="is" />
 			</>)}
 
+		</div>
 		</div>
 	);
 };

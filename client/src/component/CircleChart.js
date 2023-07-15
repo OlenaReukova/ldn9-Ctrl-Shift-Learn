@@ -35,8 +35,8 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
             cx="50%"
             cy="50%"
             dataKey="value"
-            innerRadius={"70%"}
-            outerRadius={"100%"}
+            innerRadius={"75%"}
+            outerRadius={"105%"}
           >
             {data.map((entry, index) => {
               if (index === 1) {

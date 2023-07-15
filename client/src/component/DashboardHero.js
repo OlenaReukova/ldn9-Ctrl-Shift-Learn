@@ -13,7 +13,7 @@ export const DashboardHero = (data) => {
       <p className="hero-prgph">Submitted PRs: <span className="card-prgph-number">{data.achievedPulls}</span></p>
       <p className="hero-prgph">CodeWars Rank: <span className="card-prgph-number">{data.achievedRank}</span> kyu</p>
       </div>
-      <p className="hero-details">Scroll down to see more details</p>
+      {/* <p className="hero-details">Scroll down to see more details</p> */}
     </div>
   );
 };
