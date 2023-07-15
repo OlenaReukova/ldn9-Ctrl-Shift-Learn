@@ -53,6 +53,10 @@
 	font-weight: "bold";
 	/* position: absolute; */
 }
+
+.form-input{
+	color: var(--black);
+}
 @media (min-width: 650px) {
 	.home-heading {
 		font-size: 32px;
