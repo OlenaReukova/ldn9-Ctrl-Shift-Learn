@@ -1,57 +1,30 @@
 .pr_card {
-    position: absolute;
-    width: 388px;
-    height: 568px;
-    left: 20px;
-    top: 169px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    text-align: center;
+    width: 100%;
     background: var(--PrimaryColor);
+    height: 60vh;
+    
 }
 
-h2 {
+.dashboardHero-title {
     color: var(--SecondaryColor);
 }
 
-h3 {
-    color: var(--SecondaryColor);
-
-position: absolute;
-width: 381.12px;
-height: 83px;
-left: 19.93px;
-top: 261px;
-
-font-family: 'Noto Serif SC';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 34px;
-display: flex;
-align-items: center;
-text-align: center;
-
-}
-
-h4 {
-
-position: absolute;
-width: 381.12px;
-height: 120px;
-left: 21.96px;
-top: 351px;
-
-font-family: 'Noto Serif SC';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 34px;
-display: flex;
-align-items: center;
-text-align: center;
-
+.hero-prgph {
 color: var(--SecondaryColor);
+font-weight: 400;
+font-size: 1.5rem;
+line-height: 34px;
 }
 
+.hero-details{
+    font-size: 16px;
+    color: var(--red);
+}
 
 
 
