@@ -4,11 +4,17 @@ import { DashboardHero } from "../component/DashboardHero";
 import { MilestoneCard } from "../component/MilestoneCard";
 import milestoneDetails from "./../../data/milestones.json";
 import { mandatoryCourswork } from "../../data/mandatoryCoursework";
+import "./dashboard.css";
+
 export const Dashboard = () => {
 	const { userName, githubData, codewarsData } = useContext(AppContext);
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
+	const [ShowCard, setShowCard] = useState(false);
+	const [ShowBothCard, setShowBothCard] = useState(false);
+	// const [ShowNCard, setShowNCard] = useState(false);
+
 	useEffect(() => {
 		const fetchCohortData = async () => {
 			try {
@@ -24,6 +30,7 @@ export const Dashboard = () => {
 		};
 		fetchCohortData();
 	}, [userName]);
+
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -33,7 +40,7 @@ export const Dashboard = () => {
 			.map((item) => item.toLowerCase())
 			.includes(repoName);
 	});
-	console.log(codewarsData);
+
 	const {
 		start,
 		html_css,
@@ -69,53 +76,81 @@ export const Dashboard = () => {
 			fp_week2,
 		]
 	);
+	const currentDate = new Date().getTime();
+	// useEffect(() => {
+	// 	const startDate = new Date(cohortData.start).getTime();
+	// 	const finishDate = new Date(cohortData["fp_week2"]).getTime();
+	// 	if (currentDate < startDate) {
+	// 		return setShowCard(true);
+	// 	}
+	// 	if (currentDate > finishDate) {
+	// 		return setShowBothCard(true);
+	// 	}
+
+	// }, [ShowCard, cohortData, currentDate]);
+
 	useEffect(() => {
-		let indexOfNextMilestone = 0;
+		let indexOfNextMilestone = -1;
 		const cohortMilestoneDeadlinesArray = Object.entries(
 			cohortMilestoneDeadlines
 		);
 		indexOfNextMilestone = cohortMilestoneDeadlinesArray.findIndex(
 			([, value]) => {
-				const currentDate = new Date().getTime();
 				const timestampForValue = new Date(value).getTime();
 				return currentDate <= timestampForValue;
 			}
 		);
-		if (indexOfNextMilestone !== -1) {
+		if (indexOfNextMilestone !== -1 && indexOfNextMilestone !== 0) {
 			const [previousMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone - 1];
 			const [nextMilestoneName] =
 				cohortMilestoneDeadlinesArray[indexOfNextMilestone];
 			setCurrentMilestoneName(previousMilestoneName);
 			setNextMilestoneName(nextMilestoneName);
-		} else {
-			console.log("loading...");
+		} if (indexOfNextMilestone === 0){
+			return setShowCard(true);
 		}
-	}, [cohortMilestoneDeadlines]);
+
+		if (indexOfNextMilestone === -1){
+			return setShowBothCard(true);
+		}
+	}, [cohortMilestoneDeadlines, currentDate]);
+
 	const getData = (value) => {
 		let localDate = new Date(cohortMilestoneDeadlines[value]).toLocaleDateString();
 		return {
 			targetPulls: milestoneDetails[value].pulls,
 			targetRank: milestoneDetails[value].codewars,
 			name: value,
-			naxtDeadline: localDate,
+			deadline: localDate,
 			achievedPulls: filteredPulls?.length,
-			achievedRank: codewarsData.ranks?.overall?.name,
+			achievedRank: codewarsData.ranks?.overall.rank * -1,
 			achievedScore: codewarsData.ranks?.languages
 				?.javascript.score,
 		};
 	};
 	return (
-		<div className="dashboard">
-			<DashboardHero data={{
-				achievedPulls: filteredPulls?.length,
-				achievedRank: codewarsData.ranks?.overall?.name,
-			}} />
+		<div className="dashboard__container">
+			{!!filteredPulls?.length && codewarsData.ranks?.overall.name && <DashboardHero
+				achievedPulls={filteredPulls?.length}
+				achievedRank={codewarsData.ranks?.overall?.name}
+			/>}
 			{previousMilestoneName && <MilestoneCard
-				data={getData(previousMilestoneName)} time={"Previous"} timeVerb={"was"}
+				data={getData(previousMilestoneName)} time="Previous" timeVerb="was"
 			/>}
 			{nextMilestoneName && <MilestoneCard
-				data={getData(nextMilestoneName)} time={"Next"} timeVerb={"is"} />}
+				data={getData(nextMilestoneName)} display="none" time="Next" timeVerb="is" />}
+			{!previousMilestoneName && !nextMilestoneName && ShowCard && (<>
+				<MilestoneCard
+					data={getData("start")} display="none" time="Next" timeVerb="is" />
+			</>)}
+			{!previousMilestoneName && !nextMilestoneName && !ShowCard && ShowBothCard && (<>
+				<MilestoneCard
+					data={getData("fp_week2")} time="Previous" timeVerb="was"
+				/><MilestoneCard
+					data={getData("post_grad")} display="none" time="Next" timeVerb="is" />
+			</>)}
+
 		</div>
 	);
 };

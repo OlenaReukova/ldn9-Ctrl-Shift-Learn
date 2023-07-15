@@ -38,15 +38,15 @@ export const AddTrainee = () => {
 	return (
 		<div className="addTrainee">
 			<h1>Add Trainee to the related Cohort</h1>
-			<form onSubmit={handleSubmit}>
-				<InputeField
+			<form  className="addtrainee-input-form" onSubmit={handleSubmit}>
+				<InputeField className="addtrainee-input"
 					placeholder={"Github User Name"}
 					label={"Github User Name"}
 					type={"text"}
 					value={githubUserName}
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
-				<InputeField
+				<InputeField className="addtrainee-input"
 					placeholder={"Full Name "}
 					label={"Full Name "}
 					type={"text"}
@@ -54,7 +54,7 @@ export const AddTrainee = () => {
 					onChange={(e) => setFullName(e.target.value)}
 				/>
 
-				<InputeField
+				<InputeField className="addtrainee-input"
 					placeholder={"cohort Id "}
 					label={"cohort Id"}
 					type={"number"}

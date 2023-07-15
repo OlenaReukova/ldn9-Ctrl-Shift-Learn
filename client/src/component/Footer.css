@@ -13,8 +13,8 @@
   }
 
   .Footer {
-    background: var(--cyf-color);
-    color: var(--white);
+    background: var(--red);
+    color: var(--SecondaryColor);
     height: auto;
     font-size: 1em;
     font-weight: 600;
@@ -47,17 +47,8 @@
     top: 5px;
   }
 
-  .fb :hover,
-  .tw :hover,
-  .link :hover,
-  .instag :hover,
-  .github :hover,
-  .email :hover {
-    color: var(--cyf-color);
-  }
-
   .email-required {
-    background: var(--white);
+    background: var(--SecondaryColor);
     height: auto;
     font-size: 1em;
     line-height: 1.5em;
@@ -81,7 +72,7 @@
   }
 
   .footer-bottom a {
-    color: var(--cyf-color);
+    color: var(--red);
     text-decoration: underline;
     text-decoration-color: var(--black);
   }

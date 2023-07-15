@@ -10,6 +10,10 @@ import { Cohorts } from "./pages/Cohorts";
 import { AddTrainee } from "./pages/AddTrainee";
 import { UpdateTrainee } from "./pages/UpdateTrainee";
 import { Cohort } from "./pages/Cohort";
+import { Header } from "./component/Header";
+import { Footer } from "./component/Footer";
+
+import { UpdateCohort } from "./pages/UpdateCohort";
 
 const App = () => {
 	const [userName, setUserName] = useState("");
@@ -27,18 +31,21 @@ const App = () => {
 				setGitHubData,
 			}}
 		>
+			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/result" element={<Dashboard />} />
 				<Route path="/admin/cohorts" element={<Cohorts />} />
 				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
 				<Route path="/admin/cohorts/:id" element={<Cohort />} />
+				<Route path="/admin/cohorts/updatecohort/:id" element={<UpdateCohort />} />
 				<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
 				<Route
 					path="/admin/cohorts/:id/updatetrainee/:id"
 					element={<UpdateTrainee />}
 				/>
 			</Routes>
+			<Footer />
 		</AppContext.Provider>
 	);
 };
