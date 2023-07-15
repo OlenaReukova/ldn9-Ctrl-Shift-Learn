@@ -1,0 +1,32 @@
+.pr_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    text-align: center;
+    width: 100%;
+    background: var(--PrimaryColor);
+    height: 60vh;
+    
+}
+
+.dashboardHero-title {
+    color: var(--SecondaryColor);
+}
+
+.hero-prgph {
+color: var(--SecondaryColor);
+font-weight: 400;
+font-size: 1.5rem;
+line-height: 34px;
+}
+
+.hero-details{
+    font-size: 16px;
+    color: var(--red);
+}
+
+
+
+
+
