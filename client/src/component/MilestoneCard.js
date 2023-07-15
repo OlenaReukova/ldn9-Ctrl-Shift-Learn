@@ -24,7 +24,7 @@ export const MilestoneCard = ({
             </div>
             <div className="milestone__card-subcontainer">
                 <div className="factor-container">
-                    <p className="factor-title">Pull Requests</p>
+                    <p className="factor-title">PRs</p>
                     <p className="card-prgph" >
                         <span>Target:</span>
                         <span className="card-prgph-number">{data.targetPulls}</span>
@@ -47,7 +47,7 @@ export const MilestoneCard = ({
                         <span className="card-prgph-number">{data.achievedRank} <span className="kyu">Kyu</span></span>
                     </p>
                     <CircleChart targetScore={getCodewarsScore(data.targetRank)} achievedscore={data.achievedScore} />
-                    <p style={{ display: display }}>{checkMilestone(data.targetRank, data.achievedRank)} Milestone</p>
+                    <p style={{ display: display }}>{checkMilestone(getCodewarsScore(data.targetRank), data.achievedScore)} Milestone</p>
                 </div>
             </div>
         </div>

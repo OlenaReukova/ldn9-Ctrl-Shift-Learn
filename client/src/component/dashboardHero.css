@@ -43,5 +43,16 @@
   .dashboardHero-title-cohort {
     font-size: 1.5rem;
     color: var(--SecondaryColor);
-  }
-  
+}
+
+@media (min-width: 650px) {
+    .pr_card{
+        height: 30vh;
+    }
+
+    .hero-subcontainer{
+        flex: row;
+        justify-content: center;
+        
+    }
+}

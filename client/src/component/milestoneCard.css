@@ -6,6 +6,7 @@
   justify-content: center;
   background-color: var(--PrimaryColor);
   padding: 40px 15px;
+  height:900px
 }
 .milestone__title-container {
   display: flex;
@@ -61,4 +62,20 @@ p{
 .kyu {
   color: var(--white);
   font-size: 1.25rem;
+}
+
+@media (min-width: 650px) {
+  .milestone__card-container {
+    width: 50%;
+    row-gap: 30px;
+    justify-content: center;
+    background-color: var(--PrimaryColor);
+    padding: 40px 15px;
+    height:900px
+  }
+
+  .milestone__card-subcontainer {
+   height: 80%;
+  }
+ 
 }
