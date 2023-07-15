@@ -42,7 +42,7 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
               if (index === 1) {
                 return <Cell key={`cell-${index}`} fill="red" />;
               }
-              return <Cell key={`cell-${index}`} fill="#F9D949" />;
+              return <Cell key={`cell-${index}`} fill="green" />;
             })}
             <Label
               value={`${percentage.toFixed(0)}%`}
