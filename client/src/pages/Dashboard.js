@@ -11,8 +11,8 @@ export const Dashboard = () => {
 	const [cohortData, setCohortData] = useState({});
 	const [previousMilestoneName, setCurrentMilestoneName] = useState("");
 	const [nextMilestoneName, setNextMilestoneName] = useState("");
-	const [ShowPCard, setShowPCard] = useState("false");
-	const [ShowNCard, setShowNCard] = useState("false");
+	const [ShowCard, setShowCard] = useState(null);
+	// const [ShowNCard, setShowNCard] = useState(false);
 
 	useEffect(() => {
 		const fetchCohortData = async () => {
@@ -29,6 +29,7 @@ export const Dashboard = () => {
 		};
 		fetchCohortData();
 	}, [userName]);
+
 	const filteredPulls = githubData.items?.filter((pull) => {
 		const repoName = pull.url
 			.replace("https://api.github.com/repos/CodeYourFuture/", "")
@@ -38,7 +39,7 @@ export const Dashboard = () => {
 			.map((item) => item.toLowerCase())
 			.includes(repoName);
 	});
-	console.log(codewarsData);
+
 	const {
 		start,
 		html_css,
@@ -78,12 +79,12 @@ export const Dashboard = () => {
 	useEffect(() => {
 		const startDate = new Date(cohortData.start).getTime();
 		const finishDate = new Date(cohortData["fp_week2"]).getTime();
-		currentDate < startDate && setShowPCard(true);
-		currentDate > finishDate && setShowNCard(true);
+		currentDate < startDate && setShowCard(true);
+		currentDate > finishDate && setShowCard(false);
 		console.log(finishDate);
-	// console.log(ShowNCard);
-	console.log(currentDate > finishDate);
-	},[ShowNCard, ShowPCard, cohortData, currentDate]);
+		// console.log(ShowNCard);
+		console.log(currentDate > finishDate);
+	}, [ShowCard, cohortData, currentDate]);
 
 	useEffect(() => {
 		let indexOfNextMilestone = 0;
@@ -114,7 +115,7 @@ export const Dashboard = () => {
 			targetPulls: milestoneDetails[value].pulls,
 			targetRank: milestoneDetails[value].codewars,
 			name: value,
-			deadline: localDate,
+			deadline: localDate ,
 			achievedPulls: filteredPulls?.length,
 			achievedRank: codewarsData.ranks?.overall.rank * -1,
 			achievedScore: codewarsData.ranks?.languages
@@ -132,8 +133,16 @@ export const Dashboard = () => {
 			/>}
 			{nextMilestoneName && <MilestoneCard
 				data={getData(nextMilestoneName)} display="none" time="Next" timeVerb="is" />}
-				{ShowNCard && <MilestoneCard
-				data={getData("start")} display="none" time="Next" timeVerb="is" />}
+			{ShowCard && (<>
+				<MilestoneCard
+					data={getData("start")} display="none" time="Next" timeVerb="is" />
+			</>)}
+			{!ShowCard && (<>
+				<MilestoneCard
+					data={getData("fp_week2")} time="Previous" timeVerb="was"
+				/><MilestoneCard
+					data={getData("post_grad")} display="none" time="Next" timeVerb="is" />
+			</>)}
 
 		</div>
 	);
