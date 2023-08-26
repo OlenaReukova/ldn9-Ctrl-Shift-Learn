@@ -1,3 +1,20 @@
+# In A Class of Our Own
+
+
+
+# What the project does
+A web application has been developed for CYF trainees to track their progress against milestones set by the Course Director. 
+This application is integrated with platform APIs, such as Codewars and GitHub, enabling automatic retrieval of data related 
+to trainees' progress on these external platforms. 
+The collected data is then used to assess the trainees' advancement towards the milestones defined by the course. 
+
+# Why the project is useful
+The app empowers trainees to monitor their progress, effectively work towards their goals, and save time by consolidating 
+all relevant data in one place. Additionally, it streamlines the workflow for CYF Product Managers, saving them time as well.
+
+# Who maintains and contributes to the project
+The team of four: 
+
 # Starter Kit
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
