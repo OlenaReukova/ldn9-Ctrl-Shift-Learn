@@ -55,4 +55,15 @@
         justify-content: center;
         
     }
+
+    .hero-subcontainer {
+      background-color: rgba(94, 105, 140, 0.5);
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      justify-self: center;
+      align-self: center;
+      column-gap: 40px;
+    }
 }

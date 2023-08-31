@@ -31,21 +31,23 @@ const App = () => {
 				setGitHubData,
 			}}
 		>
-			<Header />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/result" element={<Dashboard />} />
-				<Route path="/admin/cohorts" element={<Cohorts />} />
-				<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
-				<Route path="/admin/cohorts/:id" element={<Cohort />} />
-				<Route path="/admin/cohorts/updatecohort/:id" element={<UpdateCohort />} />
-				<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
-				<Route
-					path="/admin/cohorts/:id/updatetrainee/:id"
-					element={<UpdateTrainee />}
-				/>
-			</Routes>
-			<Footer />
+			<div className="body-container">
+				<Header />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/result" element={<Dashboard />} />
+					<Route path="/admin/cohorts" element={<Cohorts />} />
+					<Route path="/admin/cohorts/addcohort" element={<CohortForm />} />
+					<Route path="/admin/cohorts/:id" element={<Cohort />} />
+					<Route path="/admin/cohorts/updatecohort/:id" element={<UpdateCohort />} />
+					<Route path="/admin/cohorts/:id/addtrainee" element={<AddTrainee />} />
+					<Route
+						path="/admin/cohorts/:id/updatetrainee/:id"
+						element={<UpdateTrainee />}
+					/>
+				</Routes>
+				<Footer />
+			</div>
 		</AppContext.Provider>
 	);
 };

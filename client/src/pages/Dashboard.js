@@ -130,7 +130,7 @@ export const Dashboard = () => {
 		};
 	};
 	return (
-		<div className="dashboard__container">
+		<div className="dashboard__container main">
 			{!!filteredPulls?.length && codewarsData.ranks?.overall.name && <DashboardHero
 				achievedPulls={filteredPulls?.length}
 				achievedRank={codewarsData.ranks?.overall.rank * -1}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../component/Button";
 import { InputeField } from "../component/InputeField";
-import "../pages/addTrainee.css";
+// import "../pages/addTrainee.css";
 
 export const AddTrainee = () => {
 	const [fullname, setFullName] = useState("");
@@ -36,9 +36,9 @@ export const AddTrainee = () => {
 	};
 
 	return (
-		<div className="addTrainee">
+		<div className="addTrainee main">
 			<h1>Add Trainee to the related Cohort</h1>
-			<form  className="addtrainee-input-form" onSubmit={handleSubmit}>
+			<form  className="" onSubmit={handleSubmit}>
 				<InputeField className="addtrainee-input"
 					placeholder={"Github User Name"}
 					label={"Github User Name"}

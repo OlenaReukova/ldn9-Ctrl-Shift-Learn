@@ -48,7 +48,7 @@ export const UpdateCohort = () => {
 	};
 
 	return (
-		<div>
+		<div className="main">
 			<h1>Update Cohort</h1>
 
 			<form style={{ display: "grid" }} onSubmit={handleSubmit}>

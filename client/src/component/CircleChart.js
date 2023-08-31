@@ -13,11 +13,11 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
 
   const data = [
     { name: "Group A", value: achievedscore },
-    { name: "Group B", value: gettingNeddedScore() },
+    { name: "Group B", value: gettingNeddedScore(targetScore, achievedscore) },
   ];
 
   // const totalValue = data.reduce((sum, entry) => sum + entry.value, 0);
-  const percentage = (data[0].value / targetScore) * 100;
+  const percentage = ((data[0].value / targetScore) * 100).toFixed(0);
   const [isLabelVisible, setLabelVisible] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,14 +44,15 @@ export const CircleChart = ({ targetScore, achievedscore }) => {
               }
               return <Cell key={`cell-${index}`} fill="green" />;
             })}
-            <Label
-              value={`${percentage.toFixed(0)}%`}
+            <Label className="circle_label"
+              value={`${percentage <= 100 ? percentage : "+ 100"}%`}
               position="center"
               fill="black"
               style={{
                 fontSize: "20px",
                 fontWeight: "bold",
                 fontFamily: "Roboto",
+                fill: "var(--yellow)",
                 opacity: isLabelVisible ? 1 : 0,
                 transition: "opacity 1s ease-in-out",
               }}

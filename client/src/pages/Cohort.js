@@ -28,18 +28,16 @@ export const Cohort = () => {
     console.log(trainees);
     console.log(milestones);
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="main" style={{ display: "flex", flexDirection: "column" }}>
             <h1>{milestones.name}</h1>
             <Milestones milestones={milestones} />
+            <Link className="link" to={`/admin/cohorts/updatecohort/${id}`}>
+                <button>Edit Cohort</button>
+            </Link>
             <Trainees trainees={trainees} id={id} />
             <Link className="link" to={`/admin/cohorts/${id}/addtrainee`}>
-                Add New Trainee
+                <button>Add New Trainee</button>
             </Link>
-            <span>
-										<Link className="link" to={`/admin/cohorts/updatecohort/${id}`}>
-											Edit Cohort
-										</Link>
-									</span>
         </div>
     );
 };

@@ -7,7 +7,7 @@ export const MilestoneCard = ({
     display,
 }) => {
     const getCodewarsScore = (value) => {
-        let score = value === 8 ? 0 : value === 7 ? 20 : value === 6 ? 76 : value === 5 ? 229 : value === 5 ? 643 : 0;
+        let score = value === 8 ? 0 : value === 7 ? 20 : value === 6 ? 76 : value === 5 ? 229 : value === 4 ? 643 : 0;
         return score;
     };
     const checkMilestone = (target, achieved) => (achieved < target ? "Behind" : achieved === target ? "At" : achieved > target ? "Beyond" : "");

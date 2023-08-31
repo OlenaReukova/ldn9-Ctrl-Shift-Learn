@@ -42,7 +42,7 @@ export const CohortForm = () => {
 
     return (
 
-        <form style={{ display: "grid" }} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="main">
             <InputeField id={"new-cohort"} placeholder={"type new cohort name here"} label={"Cohort Name"} type={"text"} onChange={(event) =>
                 setFormInput({ ...formInput, name: event.target.value })
             } />

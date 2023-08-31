@@ -38,7 +38,7 @@ export const UpdateTrainee = () => {
 	};
 
 	return (
-		<div className="addTrainee">
+		<div className="addTrainee main">
 			<h1>Update Trainee's details</h1>
 			<form onSubmit={handleSubmit}>
 				<InputeField

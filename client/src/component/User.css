@@ -30,6 +30,7 @@
 	border: var(--red) solid;
 	border-radius: 4px;
 	color: var(--gray);
+	width: 100%;
 }
 .search-button {
 	position: absolute;
