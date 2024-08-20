@@ -1,5 +1,7 @@
 # CYF Progress Tracker
-![Logo](./client/src/assets/images/logo.png)
+![Logo](./client/src/assets/images/logo.png)    
+
+[View Demo](https://starter-kit-j8jj.onrender.com/)
 
 ## Table of Contents
 [`Introduction`](#introduction)    
