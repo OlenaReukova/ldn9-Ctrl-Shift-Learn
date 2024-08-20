@@ -1,7 +1,59 @@
-# Starter Kit
+# CYF Progress Tracker
+![Logo](./client/src/assets/images/logo.png)
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+## Table of Contents
+[`Introduction`](#Introduction)
+[`Features`](#Features)
+[`Getting Started`](#Getting-Started)
+[`Development Keys`](#Development-Keys)
+[`Tech Stack`](#Tech-Stack)
+[`Dependencies`](#Dependencies)
+[`Contributors`](#Contributors)
 
+
+## Introduction
+The CYF Progress Tracker is a web application designed to help trainees at CodeYourFuture (CYF) overcome the challenges of tracking their progress toward key milestones throughout their course. Recognizing the difficulty trainees face in monitoring their advancement, this application provides a centralized platform where they can easily track their progress against the milestones set by the Course Director.
+
+## Features
+### Trainee Progress Tracker
+The application integrates with external platforms such as Codewars and GitHub to fetch data related to the trainees' activities. By displaying this data within the app, trainees can view their progress against milestones without the need for manual updates. This integration ensures that progress information is consistently updated and accessible, providing a clear overview of trainees' achievements and activities.
+
+Home page
+<img src="./client/src/assets/images/homepage.png" alt="Home" width="900" height="300">
+
+Home page displays the enter field for trainee.
+
+Trainee Dashboard
+<img src="./client/src/assets/images/dashtr.png" alt="Trainee Dashboard" width="600" height="300">
+ <img src="./client/src/assets/images/mob%20dashtr.png" alt="Trainee Dashboard Mob" width="100" height="450">
+
+The trainee dashboard provides trainees with essential information, including their cohort, the names of their previous and upcoming milestones, and the deadlines for each milestone. For each milestone, it displays the target number of pull requests (PRs) and the number of PRs achieved, the target Codewars rank and the achieved rank, and for both PRs and Codewars, a conclusion on whether the trainee is on track with the milestone or falling behind.
+
+Using the collected data, the app assesses trainees' progress toward predefined milestones. This feature provides both trainees and the Course Director with a clear overview of where each trainee stands in their learning journey.
+
+The application empowers trainees to monitor their own progress, identify areas where they need to improve, and work more effectively towards achieving their goals.
+
+### Manager Dashboard
+ <img src="./client/src/assets/images/admindash1.png" alt="Trainee Dashboard" width="900" height="300">
+<img src="./client/src/assets/images/admindash2.png" alt="Trainee Dashboard" width="200" height="300">
+ <img src="./client/src/assets/images/admindash3.png" alt="Trainee Dashboard" width="200" height="300">
+  <img src="./client/src/assets/images/addtrainee.png" alt="Trainee Dashboard" width="300" height="300">
+  
+This app includes an admin dashboard for managers, allowing them to view cohorts, add new cohorts, edit existing cohorts, set milestones, and add trainees.
+
+## Getting Started
+
+To use the app, follow these steps:
+
+Clone the repository.
+Install the dependencies by running 
+```npm install```
+
+Start the development server by running
+```npm run dev```
+
+
+## Tech Stack
 - [x] Full stack ES8+ with [Babel]
 - [x] [Node] LTS support (verified working on 16.x, 18.x and 20.x LTS releases)
 - [x] [Express] server
@@ -16,76 +68,51 @@
 - [x] [Docker] build
 - [x] [Postgres] database with [node-postgres]
 
-## Setup
-
-> **Note** if you have _any problems_ setting up the starter kit, see the [wiki] and, if still not solved, post to
-> [`#cyf-full-stack-starter-kit` in Slack][2].
-
-Pick one member of the team to own the repository and pipeline. That person should do the following:
-
-1.  Click the "Use this template" button above (see [GitHub's docs][1]) to create your team repository and name it something appropriate for your project.
-    - Your repo should say _"generated from"_, **not** _"forked from"_, _"CodeYourFuture/cyf-final-project-starter-kit"_ at the top
-2.  In your repo, click the "Deploy to Render" button at the top of the README and log in using GitHub when prompted.
-3.  Fill in a service group name for your application and then click "Apply".
-4.  Once it has deployed successfully, click the "managed resources" link to view the application details.
-
-Whenever you commit to main (or e.g. merge a [pull request]) it will get automatically deployed!
-
-You should now make sure all of the project team are [collaborators] on the repository.
-
-## Scripts
-
-Various scripts are provided in the package file, but many are helpers for other scripts; here are the ones you'll
-commonly use:
-
-- `dev`: starts the frontend and backend in dev mode, with file watching (note that the backend runs on port 3100, and
-  the frontend is proxied to it).
-- `lint`: runs ESLint and Prettier against all the code in the project.
-- `serve`: builds and starts the app in production mode locally.
-
-### Debugging
-
-While running the dev mode using `npm run dev`, you can attach the Node debugger to the server process via port 9229.
-If you're using VS Code, a debugging configuration is provided for this.
-
-There is also a VS Code debugging configuration for the Chrome debugger, which requires the recommended Chrome
-extension, for debugging the client application.
-
-### Security
-
-If the project handles **any kind of** Personally Identifiable Information (PII) then make sure the following
-principles are followed:
-
-- Only collect **strictly necessary** PII;
-- Access to PII should be as restricted as possible;
-- Access to PII should only be possible after authentication. Authentication **must be done** via GitHub. **Ad hoc
-  authentication solutions are not allowed**;
-- Admins must be able to control who has access to the platform and at which levels using only GitHub groups;
-- There must be an audit mechanism in place. It is required by law to know who accessed what and when;
-- Code must be reviewed by senior developers before being pushed to production;
-- APIs must be secure. Make sure we are not handling security on the frontend.
-
-### Troubleshooting
-
-See the guidance in the [wiki].
-
-[1]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template
-[2]: https://codeyourfuture.slack.com/archives/C021ATWS9A5
-[Babel]: https://babeljs.io/
-[Cloud Foundry]: https://www.cloudfoundry.org/
-[collaborators]: https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository
-[Docker]: https://www.docker.com
-[ESLint]: https://eslint.org/
-[Express]: https://expressjs.com/
-[Morgan]: https://github.com/expressjs/morgan
-[Node]: https://nodejs.org/en/
-[node-postgres]: https://node-postgres.com/
-[Postgres]: https://www.postgresql.org/
-[Prettier]: https://prettier.io/
-[pull request]: https://help.github.com/en/articles/about-pull-requests
-[React]: https://reactjs.org/
-[React Router]: https://reactrouter.com/web
-[Render]: https://render.com/
-[Webpack]: https://webpack.js.org/
-[wiki]: https://github.com/textbook/starter-kit/wiki
-[Winston]: https://github.com/winstonjs/winston
+## Dependencies
+   "@babel/cli": "^7.21.5",    
+   "@babel/core": "^7.21.5",    
+ "@babel/eslint-parser": "^7.21.3",    
+  "@babel/node": "^7.20.7",    
+ "@babel/plugin-proposal-class-properties": "^7.18.6",    
+  "@babel/plugin-transform-runtime": "^7.21.4",    
+  "@babel/preset-env": "^7.21.5",    
+   "@babel/preset-react": "^7.18.6",    
+		"@codeyourfuture/eslint-config-standard": "^3.0.3",    
+		"@testing-library/dom": "^10.4.0",    
+		"@testing-library/jest-dom": "^6.4.8",    
+		"@testing-library/react": "^16.0.0",    
+		"@textbook/build-info": "^0.5.1",    
+		"babel-loader": "^9.1.2",    
+		"concurrently": "^8.0.1",    
+		"cross-env": "^7.0.3",    
+		"css-loader": "^6.7.3",    
+		"del-cli": "^5.0.0",    
+		"eslint": "^8.39.0",    
+		"eslint-plugin-jsx-a11y": "^6.7.1",    
+		"eslint-plugin-react": "^7.32.2",    
+		"eslint-plugin-react-hooks": "^4.6.0",    
+		"file-loader": "^6.2.0",    
+		"history": "^5.3.0",    
+		"html-webpack-plugin": "^5.5.1",    
+		"html-webpack-tags-plugin": "^3.0.2",    
+		"jest-environment-jsdom": "^29.5.0",    
+		"nodemon": "^2.0.22",    
+		"prettier": "^2.8.8",    
+		"prop-types": "^15.8.1",    
+		"react": "^18.2.0",    
+		"react-dom": "^18.2.0",    
+		"react-router-dom": "^6.11.0",    
+		"react-test-renderer": "^18.3.1",    
+		"style-loader": "^3.3.2",    
+		"wait-on": "^7.0.1",    
+		"webpack": "^5.81.0",    
+		"webpack-cli": "^5.0.2",    
+		"webpack-dev-server": "^4.13.3",    
+		"webpack-merge": "^5.8.0"  
+    
+  ## Contributors
+1. Olena Reukova - [`Link`](https://github.com/OlenaReukova)
+2. Boshra Mahmoudi - [`Link`](https://github.com/BoshraM)
+3. Zober Rigi - [`Link`](https://github.com/Zobeir-Rigi)
+4. Mohammad Sefidgar- [`Link`](https://github.com/MohammadSefidgar)
+      
