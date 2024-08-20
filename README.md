@@ -2,13 +2,12 @@
 ![Logo](./client/src/assets/images/logo.png)
 
 ## Table of Contents
-[`Introduction`](#Introduction)
-[`Features`](#Features)
-[`Getting Started`](#Getting-Started)
-[`Development Keys`](#Development-Keys)
-[`Tech Stack`](#Tech-Stack)
-[`Dependencies`](#Dependencies)
-[`Contributors`](#Contributors)
+[`Introduction`](#introduction)    
+[`Features`](#features)    
+[`Getting Started`](#getting-started)    
+[`Tech Stack`](#tech-stack)    
+[`Dependencies`](#dependencies)    
+[`Contributors`](#contributors)    
 
 
 ## Introduction
@@ -18,12 +17,12 @@ The CYF Progress Tracker is a web application designed to help trainees at CodeY
 ### Trainee Progress Tracker
 The application integrates with external platforms such as Codewars and GitHub to fetch data related to the trainees' activities. By displaying this data within the app, trainees can view their progress against milestones without the need for manual updates. This integration ensures that progress information is consistently updated and accessible, providing a clear overview of trainees' achievements and activities.
 
-Home page
+#### Home page
 <img src="./client/src/assets/images/homepage.png" alt="Home" >
 
 Home page displays the enter field for trainee.
 
-Trainee Dashboard
+#### Trainee Dashboard
 <img src="./client/src/assets/images/dashtr.png" alt="Trainee Dashboard" >
  <img src="./client/src/assets/images/mob%20dashtr.png" alt="Trainee Dashboard Mob" >
 
@@ -34,10 +33,10 @@ Using the collected data, the app assesses trainees' progress toward predefined 
 The application empowers trainees to monitor their own progress, identify areas where they need to improve, and work more effectively towards achieving their goals.
 
 ### Manager Dashboard
- <img src="./client/src/assets/images/admindash1.png" alt="Trainee Dashboard" >
-<img src="./client/src/assets/images/admindash2.png" alt="Trainee Dashboard" >
- <img src="./client/src/assets/images/admindash3.png" alt="Trainee Dashboard" >
-  <img src="./client/src/assets/images/addtrainee.png" alt="Trainee Dashboard" >
+ <img src="./client/src/assets/images/admindash1.png" alt="Trainee Dashboard" width="" heigt="">
+<img src="./client/src/assets/images/admindash2.png" alt="Trainee Dashboard" width="300" heigt="300">
+ <img src="./client/src/assets/images/admindash3.png" alt="Trainee Dashboard" width="300" heigt="300">
+  <img src="./client/src/assets/images/addtrainee.png" alt="Trainee Dashboard" width="300" heigt="300">
   
 This app includes an admin dashboard for managers, allowing them to view cohorts, add new cohorts, edit existing cohorts, set milestones, and add trainees.
 
