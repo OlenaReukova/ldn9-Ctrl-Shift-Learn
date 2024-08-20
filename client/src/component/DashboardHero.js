@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
 import "./dashboardHero.css";
+
 export const DashboardHero = (data) => {
   const { userName } = useContext(AppContext);
   return (
     <div className="pr_card">
       <div className="hero-title">
-      <p className="dashboardHero-title">Hi, {userName}</p>
+      <h1 className="dashboardHero-title">Hi, {userName}</h1>
       <p className="dashboardHero-title-cohort">London9</p>
       </div>
       <div className="hero-subcontainer">
