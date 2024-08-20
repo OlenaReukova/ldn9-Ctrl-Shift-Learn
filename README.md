@@ -30,7 +30,7 @@ The trainee dashboard provides trainees with essential information, including th
 
 Using the collected data, the app assesses trainees' progress toward predefined milestones. This feature provides both trainees and the Course Director with a clear overview of where each trainee stands in their learning journey.
 
-The application empowers trainees to monitor their own progress, identify areas where they need to improve, and work more effectively towards achieving their goals.
+The application empowers trainees to monitor their own progress, identify areas where they need to improve and work more effectively towards achieving their goals.
 
 ### Manager Dashboard
  <img src="./client/src/assets/images/admindash1.png" alt="Trainee Dashboard" width="" heigt="">
@@ -45,11 +45,15 @@ This app includes an admin dashboard for managers, allowing them to view cohorts
 To use the app, follow these steps:
 
 Clone the repository.
-Install the dependencies by running 
-```npm install```
+Install the dependencies by running     
+```sh
+npm install
+```
 
-Start the development server by running
-```npm run dev```
+Start the development server by running    
+```sh
+npm run dev
+```
 
 
 ## Tech Stack
