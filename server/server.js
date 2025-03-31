@@ -1,4 +1,4 @@
-import http from "node:http";
+const http = require("http");
 
 import app from "./app.js";
 import { connectDb, disconnectDb } from "./db";
