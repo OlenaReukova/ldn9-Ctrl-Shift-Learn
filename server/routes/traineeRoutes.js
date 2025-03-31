@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllTrainees, createTrainee, getTrainee, searchTrainee, updateTrainee } from "../controllers/traineeController";
+import { getAllTrainees, createTrainee, getTrainee, searchTrainee, updateTrainee } from "../controllers/traineeController.js";
 
 const router = Router();
 

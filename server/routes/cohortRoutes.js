@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllCohorts, createCohort, updateCohort, getCohort } from "../controllers/cohortController";
+import { getAllCohorts, createCohort, updateCohort, getCohort } from "../controllers/cohortController.js";
 
 const router = Router();
 

@@ -1,4 +1,4 @@
-import db from "../db";
+import db from "../db.js";
 
 export const getAllTrainees = (req, res) => {
 	res.status(200).json("hello from trainees route");
