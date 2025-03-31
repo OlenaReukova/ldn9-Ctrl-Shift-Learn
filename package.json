@@ -17,7 +17,7 @@
 		"lint": "npm run lint:eslint && npm run lint:prettier -- --check",
 		"preserve": "npm run build",
 		"serve": "npm start",
-		"start": "node dist/server.js",
+		"start": "node server/server.js",
 		"lint:eslint": "eslint .",
 		"lint:fix": "npm run lint:eslint -- --fix && npm run lint:prettier -- --write",
 		"lint:prettier": "prettier .",
@@ -88,6 +88,7 @@
 		"morgan": "^1.10.0",
 		"node-pg-migrate": "^6.2.2",
 		"pg": "^8.11.1",
+		"pg-migrate": "^2.0.1",
 		"recharts": "^2.7.2",
 		"winston": "^3.8.2"
 	},
