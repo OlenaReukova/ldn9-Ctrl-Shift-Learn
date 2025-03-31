@@ -1,16 +1,16 @@
 import express from "express";
 
-import apiRouter from "./api";
-import traineeRouter from "./routes/traineeRoutes";
-import cohortRouter from "./routes/cohortRoutes";
-import config from "./utils/config";
+import apiRouter from "./api.js";
+import traineeRouter from "./routes/traineeRoutes.js";
+import cohortRouter from "./routes/cohortRoutes.js";
+import config from "./utils/config.js";
 import {
 	clientRouter,
 	configuredHelmet,
 	configuredMorgan,
 	httpsOnly,
 	logErrors,
-} from "./utils/middleware";
+} from "./utils/middleware.js";
 
 const apiRoot = "/api";
 
