@@ -1,7 +1,6 @@
 {
 	"name": "starter-kit",
 	"version": "0.0.1",
-	"type": "module",
 	"description": "Starter kit for full-stack JavaScript projects",
 	"private": true,
 	"scripts": {
