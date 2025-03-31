@@ -1,4 +1,4 @@
-import db from "../db";
+import db from "../db.js";
 export const getAllCohorts = async (req, res) => {
 	try {
 		const q = "SELECT * FROM cohorts";
