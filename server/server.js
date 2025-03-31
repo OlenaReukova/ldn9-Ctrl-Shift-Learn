@@ -1,7 +1,8 @@
 import http from "node:http";
 
 import app from "./app.js";
-import { connectDb, disconnectDb } from "./db";
+import { connectDb, disconnectDb } from "./db.js";
+
 import config from "./utils/config";
 import logger from "./utils/logger";
 
