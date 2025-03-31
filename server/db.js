@@ -1,4 +1,5 @@
-import { Pool } from "pg";
+import pkg from "pg";
+const { Pool } = pkg;
 
 import config from "./utils/config.js";
 import logger from "./utils/logger.js";
