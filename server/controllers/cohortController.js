@@ -125,7 +125,6 @@ export const deleteCohort = async (req, res) => {
 	try {
 		const { id } = req.params;
 
-		// First, check if the cohort exists
 		const checkQuery = "SELECT * FROM cohorts WHERE id = $1";
 		const checkResult = await db.query(checkQuery, [id]);
 
@@ -133,11 +132,9 @@ export const deleteCohort = async (req, res) => {
 			return res.status(404).json({ error: "Cohort not found." });
 		}
 
-		// Delete trainees first (to avoid foreign key constraint error)
 		const deleteTraineesQuery = "DELETE FROM trainees WHERE cohort_id = $1";
 		await db.query(deleteTraineesQuery, [id]);
 
-		// Now delete the cohort
 		const deleteQuery = "DELETE FROM cohorts WHERE id = $1";
 		const result = await db.query(deleteQuery, [id]);
 
