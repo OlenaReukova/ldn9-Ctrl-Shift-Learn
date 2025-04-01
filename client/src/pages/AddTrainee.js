@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../component/Button";
-import { InputeField } from "../component/InputeField";
+import { InputField } from "../component/InputField";
 // import "../pages/addTrainee.css";
 
 export const AddTrainee = () => {
@@ -39,14 +39,14 @@ export const AddTrainee = () => {
 		<div className="addTrainee main">
 			<h1>Add Trainee to the related Cohort</h1>
 			<form  className="" onSubmit={handleSubmit}>
-				<InputeField className="addtrainee-input"
+				<InputField className="addtrainee-input"
 					placeholder={"Github User Name"}
 					label={"Github User Name"}
 					type={"text"}
 					value={githubUserName}
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
-				<InputeField className="addtrainee-input"
+				<InputField className="addtrainee-input"
 					placeholder={"Full Name "}
 					label={"Full Name "}
 					type={"text"}
@@ -54,7 +54,7 @@ export const AddTrainee = () => {
 					onChange={(e) => setFullName(e.target.value)}
 				/>
 
-				<InputeField className="addtrainee-input"
+				<InputField className="addtrainee-input"
 					placeholder={"cohort Id "}
 					label={"cohort Id"}
 					type={"number"}

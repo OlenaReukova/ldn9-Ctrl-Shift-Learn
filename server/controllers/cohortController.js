@@ -1,4 +1,5 @@
 import db from "../db.js";
+
 export const getAllCohorts = async (req, res) => {
 	try {
 		const q = "SELECT * FROM cohorts";
@@ -53,7 +54,6 @@ export const createCohort = async (req, res) => {
 			!m_7 ||
 			!m_8
 		) {
-			//not sure product manager has to know all dates in advance
 			return res
 				.status(400)
 				.json({ error: "Please fill out all required fields." });
@@ -118,5 +118,36 @@ export const updateCohort = async (req, res) => {
 	} catch (error) {
 		console.error("Error updating cohort:", error);
 		return res.status(500).send("Failed to update cohort.");
+	}
+};
+
+export const deleteCohort = async (req, res) => {
+	try {
+		const { id } = req.params;
+
+		// First, check if the cohort exists
+		const checkQuery = "SELECT * FROM cohorts WHERE id = $1";
+		const checkResult = await db.query(checkQuery, [id]);
+
+		if (checkResult.rows.length === 0) {
+			return res.status(404).json({ error: "Cohort not found." });
+		}
+
+		// Delete trainees first (to avoid foreign key constraint error)
+		const deleteTraineesQuery = "DELETE FROM trainees WHERE cohort_id = $1";
+		await db.query(deleteTraineesQuery, [id]);
+
+		// Now delete the cohort
+		const deleteQuery = "DELETE FROM cohorts WHERE id = $1";
+		const result = await db.query(deleteQuery, [id]);
+
+		if (result.rowCount === 1) {
+			res.status(200).json({ message: "Cohort deleted successfully" });
+		} else {
+			throw new Error("Failed to delete cohort.");
+		}
+	} catch (error) {
+		console.error("Error deleting cohort:", error);
+		return res.status(500).send("Failed to delete cohort.");
 	}
 };

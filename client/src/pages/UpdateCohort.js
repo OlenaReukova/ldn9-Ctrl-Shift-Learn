@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "../component/Button";
-import { InputeField } from "../component/InputeField";
+import { InputField } from "../component/InputField";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -33,6 +33,7 @@ export const UpdateCohort = () => {
 			});
 
 			const data = await response.json();
+			setUpdateMessage(data.message || "Cohort updated successfully!");
 			setUpdateMessage("Congratulations! Cohort successfully updated! ");
 			setTimeout(() => {
 				navigate(-1);
@@ -52,7 +53,7 @@ export const UpdateCohort = () => {
 			<h1>Update Cohort</h1>
 
 			<form style={{ display: "grid" }} onSubmit={handleSubmit}>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					placeholder={"type new cohort name here"}
 					label={"Cohort Name"}
@@ -61,7 +62,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, name: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"Start Date"}
 					type={"date"}
@@ -69,7 +70,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, start_date: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"HTML-CSS"}
 					type={"date"}
@@ -77,7 +78,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_1: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"JS1-Week2"}
 					type={"date"}
@@ -85,7 +86,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_2: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"JS2-Week1"}
 					type={"date"}
@@ -93,7 +94,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_3: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"JS3-Week3"}
 					type={"date"}
@@ -101,7 +102,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_4: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"React-Week2"}
 					type={"date"}
@@ -109,7 +110,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_5: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"Node-Week2"}
 					type={"date"}
@@ -117,7 +118,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_6: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"DB-Week3"}
 					type={"date"}
@@ -125,7 +126,7 @@ export const UpdateCohort = () => {
 						setFormInput({ ...formInput, m_7: event.target.value })
 					}
 				/>
-				<InputeField
+				<InputField
 					id={"new-cohort"}
 					label={"FP-Week2"}
 					type={"date"}

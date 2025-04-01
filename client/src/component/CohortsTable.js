@@ -7,8 +7,8 @@ export const CohortsTable = ({ cohortsData }) => {
 				<table>
 					<thead>
 						<tr>
-							<th>Cohort Name</th>
-							<th>Options</th>
+							<th style={{ color: "white" }}>Cohort Name</th>
+							<th style={{ color: "white" }}>Options</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -16,7 +16,9 @@ export const CohortsTable = ({ cohortsData }) => {
 							<tr key={cohort.id}>
 								<td>{cohort.name}</td>
 								<td>
-									<Link className="link" to={`${cohort.id}`}>view</Link>
+									<Link className="link" to={`${cohort.id}`}>
+										view
+									</Link>
 								</td>
 							</tr>
 						))}

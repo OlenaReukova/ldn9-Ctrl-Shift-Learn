@@ -1,4 +1,4 @@
-export const InputeField = ({ id, label, ...props }) => {
+export const InputField = ({ id, label, ...props }) => {
 	return (
 		<div className="input-field">
 			<label htmlFor={id} > {label}</label>

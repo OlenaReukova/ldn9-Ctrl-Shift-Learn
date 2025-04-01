@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../component/Button";
-import { InputeField } from "../component/InputeField";
+import { InputField } from "../component/InputField";
 import "../pages/addTrainee.css";
 
 export const UpdateTrainee = () => {
@@ -41,14 +42,14 @@ export const UpdateTrainee = () => {
 		<div className="addTrainee main">
 			<h1>Update Trainee's details</h1>
 			<form onSubmit={handleSubmit}>
-				<InputeField
+				<InputField
 					placeholder={"Github User Name"}
 					label={"Github User Name"}
 					type={"text"}
 					value={githubUserName}
 					onChange={(e) => setGithubUserName(e.target.value)}
 				/>
-				<InputeField
+				<InputField
 					placeholder={"Full Name "}
 					label={"Full Name "}
 					type={"text"}
@@ -56,7 +57,7 @@ export const UpdateTrainee = () => {
 					onChange={(e) => setFullName(e.target.value)}
 				/>
 
-				<InputeField
+				<InputField
 					placeholder={"cohort Id "}
 					label={"cohort Id"}
 					type={"number"}

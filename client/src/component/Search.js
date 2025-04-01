@@ -9,7 +9,6 @@ export const Search = () => {
 	const [error, setError] = useState(false);
 
 	const handleSearch = () => {
-		/////****GETTING CODEWARS DATA****//////
 		fetch(`https://www.codewars.com/api/v1/users/${userName}`)
 			.then((res) => {
 				if (!res.ok) {
@@ -26,7 +25,6 @@ export const Search = () => {
 				setError(true);
 			});
 
-		///////GETING GITHUB PULL REQUEST ON CYF REPOSITORI
 		fetch(
 			`https://api.github.com/search/issues?q=is:pr%20author:${userName}%20user:codeyourfuture`
 		)

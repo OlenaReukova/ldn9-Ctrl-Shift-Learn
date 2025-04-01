@@ -26,7 +26,7 @@ export const Cohorts = () => {
 
 	return (
 		<div className="main">
-			<h1>List of Cohorts</h1>
+			<h1 >List of Cohorts</h1>
 			<CohortsTable cohortsData={cohortsData} />
 			<Link to="/admin/cohorts/addcohort">
 				<Button title="Add New Cohort" />

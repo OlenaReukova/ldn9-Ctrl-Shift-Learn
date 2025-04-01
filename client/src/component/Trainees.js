@@ -8,11 +8,11 @@ export const Trainees = ({ trainees,id }) => {
 				<table>
 					<thead>
 						<tr>
-							<th>Github User Name</th>
-							<th>Full Name</th>
-							<th>Pull Requestes</th>
-							<th>Codewars</th>
-							<th>Options</th>
+							<th style={{ color: "white" }}>Github User Name</th>
+							<th style={{ color: "white" }}>Full Name</th>
+							<th style={{ color: "white" }}>Pull Requestes</th>
+							<th style={{ color: "white" }}>Codewars</th>
+							<th style={{ color: "white" }}>Options</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -24,11 +24,24 @@ export const Trainees = ({ trainees,id }) => {
 								<td> 5ku</td>
 								<td>
 									<span>
-										<Link className="link" to={`/admin/cohorts/${id}/updateTrainee/${trainee.id}`}>Edit</Link>
+										<Link
+											style={{
+												backgroundColor: "#FF0000",
+												color: "white",
+												padding: "10px 20px",
+												border: "none",
+												borderRadius: "5px",
+												cursor: "pointer",
+											}}
+											className="link"
+											to={`/admin/cohorts/${id}/updateTrainee/${trainee.id}`}
+										>
+											Edit
+										</Link>
 									</span>
-									<span>
+									{/* <span>
 										<Link className="link">View</Link>
-									</span>
+									</span> */}
 								</td>
 							</tr>
 						))}
